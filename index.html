@@ -373,7 +373,6 @@ function doWork(data)
 	for(i=0;i<data.length;i++)
 	{
 		result = result + "<li title=\"" + data[i]['description'] +"\"><a href=\"" + data[i]['html_url'] + "\" target=\"_blank\">" + data[i]['name'] + "</a><br><strong>Languages:</strong>";
-		console.log(data[i]);
 		$.ajax({
 			async: false,
 			url: data[i]['languages_url'],
@@ -386,7 +385,6 @@ function doWork(data)
 				{
 					amount = msg[language];
 					total += msg[language];
-					window.alert("Lang: " + language + "; amount: " + amount + "; Total: " + total);
 				}
 				for(language in msg)
 				{
@@ -399,7 +397,6 @@ function doWork(data)
 		result = result + "</li>"
 	}
 	result = result + "</ol>"
-	console.log(result);
 	document.getElementById('githubRepos').innerHTML = result;
 }
 	                            </script>
