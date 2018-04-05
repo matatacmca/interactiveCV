@@ -1,0 +1,400 @@
+body
+{
+    min-width:100vw;
+    max-width:100vw;
+    width:100vw;
+    min-height:100vh;
+    max-height:100vh;
+    height:100vh;
+    padding:0;
+    margin: 0 auto;
+    background: url('coralReef.jpg') no-repeat center;
+    background-color: #0077be;
+    cursor:none;
+}
+#semi
+{
+    background-color:rgba(125,125,125,0.5);
+    margin:0;
+    height:100%;
+    width:100%;
+}
+.playerOpen
+{
+    background: url("Turtle Open.png") no-repeat center;
+}
+.playerClosed
+{
+    background: url("Turtle Closed.png") no-repeat center;
+}
+#sharkRotator
+{
+    height:100%;
+    width:100%;
+}
+#sharkMover
+{
+    border-radius:50%;
+    position:absolute;
+    top: 5vh;
+    left: 5vw;
+    height: 10vh;
+    width: 10vw;
+    z-index:10;
+    transition-duration:1.5s;
+}
+#shark
+{
+    width:100%;
+    height:100%;
+    background-size: contain;
+}
+.sharkOpen
+{
+    background: url("shark Open.png") no-repeat center;
+}
+.sharkClosed
+{
+    background: url("shark Closed.png") no-repeat center;
+}
+#startGame
+{
+    width:50%;
+    font-family: 'Gloria Hallelujah', cursive;
+    border-radius:100px;
+    cursor:pointer;
+    transition-duration:2s;
+    font-size:2em;
+}
+#startGame:hover 
+{
+    background-color:red;
+}
+#howToBG
+{
+    cursor:auto;
+    position:absolute;
+    z-index:20;
+    bottom:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    margin:0 auto;
+    display:block;
+    background-color:#000000;
+    opacity:1;
+    text-align:center;
+}
+#howTo
+{
+    display:block;
+    position:absolute;
+    z-index:20;
+    width:50vw;
+    height:90vh;
+    max-height:90vh;
+    overflow-y: scroll;
+    margin:0 auto;
+    display:block;
+    left:25vw;
+    top:5vh;
+    background-color:rgba(255,125,125,0.7);
+    opacity:1;
+    text-align:center;
+    border-radius: 5vh 5vh 0vh 0vh;
+}
+a
+{
+    text-decoration:none;
+    color:red;
+}
+h1
+{
+    font-family: 'Roboto', sans-serif;
+}
+h2
+{
+    font-family: 'Neucha', cursive;
+}
+p
+{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+li
+{
+    font-family: 'Gloria Hallelujah', cursive;
+    
+}
+.colList
+{
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    list-style-type:none;
+    overflow:hidden;
+    padding:0;
+}
+.lifesaver
+{
+    position:absolute;
+    width:15vh;
+    height:15vh;
+    background: url("lifeSaver.png") no-repeat center;
+    background-size: cover;
+    z-index:11;
+    text-align: center;
+    vertical-align:middle;
+    font-size:1.5em;
+}
+.lifesaver div
+{
+    font-family: 'Neucha', cursive;
+    display: table-cell;
+    text-align: center;
+    vertical-align:middle;
+    height:inherit;
+    width:inherit;
+}
+#ring_basicInfo
+{
+    left:45vw;
+    top:2vh;
+
+}
+#ring_skills
+{
+    top:42.5vh;
+    left:2vw;
+}
+#ring_hobbies
+{
+    top:42.5vh;
+    right:2vw;
+}
+#ring_workExperience
+{
+    bottom:2vh;
+    right:2vw;
+}
+#ring_education
+{
+    bottom:2vh;
+    left:2vw;
+}
+#ring_projects
+{
+    top:25vh;
+    left:25vw;
+}
+#ring_contactInfo
+{
+    top:25vh;
+    right:25vw;
+}
+.bubbles
+{
+    display:none;
+    position:absolute;
+    transition-duration:5s;
+    z-index:11;
+    height:3vh;
+    width:3vh;
+    background: url("bubble.png") no-repeat center;
+    background-size: contain;
+}
+.detail
+{
+    position:absolute;
+    z-index:12;
+    top:5vh;
+    height:90vh;
+    max-height:90vh;
+    width:90vw;
+    max-width:90vw;
+    margin:0 auto;
+    display:none;
+    left:5vw;
+    background: url("beach.jpg") no-repeat bottom;
+    background-color: #EED6AF;
+    background-size: cover;
+    opacity:1;
+    text-align:center;
+    border-radius: 5vh;
+    cursor:initial;
+}
+.detailContent
+{
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+    max-height: 82vh;
+    height: 82vh;
+    overflow-x: auto;
+    overflow-y:none;
+}
+.detailScroller
+{
+	position:relative;
+	bottom:0;
+	height:5vh;
+	background-color:yellow;
+	width:5vh;
+	background: url("arrow-down.png") no-repeat center;
+	margin:0 auto;
+	border: thick solid white;
+	border-radius:50%;
+	display:none;
+}
+.returnToSea
+{
+	color:red;
+    min-width: 5vh;
+    width:auto;
+    float: right;
+    display: block;
+    text-align: right;
+    right: 5vh;
+    position: relative;
+    top: 5vh;
+    font-family: 'Dancing Script', cursive;
+    font-size:1.5em;
+    transition-duration:1s;
+    padding:1vh;
+    border-radius:2.5vh;
+}
+#githubProfile
+{
+    text-align:center;
+}
+.avatar
+{
+    display:block;
+    width:10vw;
+    height:10vw;
+    margin:0 auto;
+    background: url('avatar.jpg') no-repeat center;
+    background-size:cover;
+    border-radius:50%;
+}
+#mobileAvatar
+{
+	display:none;
+}
+#playerMover
+{
+    border-radius:50%;
+    position:absolute;
+    top: 45vh;
+    left: 45vw;
+    height: 10vh;
+    width: 10vw;
+    z-index:10;
+    transition-duration:0s;
+}
+#playerRotator
+{
+    height:100%;
+    width:100%;
+}
+#player
+{
+    width:100%;
+    height:100%;
+    background-size: contain;
+}
+.mover
+{
+    position:absolute;
+    z-index:9;
+    height:7vh;
+    width:7vh;
+    display:none;
+    transition-duration:5s;
+}
+.rotator
+{
+    height:100%;
+    width:100%;
+}
+.jellyfish
+{
+    height:100%;
+    width:100%;
+    background: url("jellyfish.png") no-repeat center;
+    background-size: contain;
+}
+#mobileTitle
+{
+	display:none;
+	margin:0 auto;
+	text-align:center;
+}
+@media only screen and (max-width: 600px){
+    body
+    {
+	    min-height:100vh;
+	    max-height:none;
+	    height:auto;
+	    padding:0;
+	    margin: 0 auto;
+	    background-repeat-y:repeat;
+	    background-position:top;
+	    background-color: #0077be;
+	    cursor:auto;
+    }
+    #howToBG
+    {
+    	display:none;
+    }
+    #mobileAvatar
+    {
+    	display:block;
+    	width:50vw;
+    	height:50vw;
+    	
+    }
+    #lifesaverContainer
+    {
+    	display:none;
+    }
+    .detail
+    {
+    	display:block;
+    	position:initial;
+    }
+    #mobileTitle
+    {
+    	display:block;
+    }
+    #playerMover
+    {
+    	display:none;
+    }
+    #sharkMover
+    {
+    	display:none;
+    }
+    .returnToSea
+    {
+    	display:none;
+    }
+    .detail
+    {
+    	height:auto;
+    	max-height:none;
+    }
+    .detailContent
+    {
+    	height:auto;
+    	max-height:none;
+    	overflow-x:initial;
+    }
+}
+@media only screen and (max-width: 850px){
+	.colList
+	{
+		-webkit-columns: 1;
+		-moz-columns: 1;
+	    columns: 1;
+	}
+}

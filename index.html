@@ -1,326 +1,12 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="jquery.ripples.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Gloria+Hallelujah|Neucha|Roboto" rel="stylesheet">
-        <style>
-body
-{
-    min-width:100vw;
-    max-width:100vw;
-    width:100vw;
-    min-height:100vh;
-    max-height:100vh;
-    height:100vh;
-    padding:0;
-    margin: 0 auto;
-    background: url('coralReef.jpg') no-repeat center;
-    background-color: #0077be;
-    cursor:none;
-}
-#semi
-{
-    background-color:rgba(125,125,125,0.3);
-    margin:0;
-    height:100%;
-    width:100%;
-}
-.playerOpen
-{
-    background: url("Turtle Open.png") no-repeat center;
-}
-.playerClosed
-{
-    background: url("Turtle Closed.png") no-repeat center;
-}
-#sharkRotator
-{
-    height:100%;
-    width:100%;
-}
-#sharkMover
-{
-    border-radius:50%;
-    position:absolute;
-    top: 5vh;
-    left: 5vw;
-    height: 10vh;
-    width: 10vw;
-    z-index:10;
-    transition-duration:1.5s;
-}
-#shark
-{
-    width:100%;
-    height:100%;
-    background-size: contain;
-}
-.sharkOpen
-{
-    background: url("shark Open.png") no-repeat center;
-}
-.sharkClosed
-{
-    background: url("shark Closed.png") no-repeat center;
-}
-#startGame
-{
-    width:25%;
-    font-size: 16px;
-    font-family: 'Gloria Hallelujah', cursive;
-    border-radius:100px;
-    cursor:pointer;
-    transition-duration:2s;
-}
-#startGame:hover 
-{
-    background-color:red;
-}
-#howToBG
-{
-    cursor:auto;
-    position:absolute;
-    z-index:20;
-    bottom:0;
-    left:0;
-    height:100vh;
-    width:100vw;
-    margin:0 auto;
-    display:block;
-    background-color:#000000;
-    opacity:1;
-    text-align:center;
-}
-#howTo
-{
-    display:block;
-    position:absolute;
-    z-index:20;
-    width:50vw;
-    height:90vh;
-    max-height:90vh;
-    overflow-y: scroll;
-    margin:0 auto;
-    display:block;
-    left:25vw;
-    top:5vh;
-    background-color:rgba(255,125,125,0.7);
-    opacity:1;
-    text-align:center;
-    border-radius: 5vh 5vh 0vh 0vh;
-}
-a
-{
-    text-decoration:none;
-    color:red;
-}
-h1
-{
-    font-family: 'Roboto', sans-serif;
-}
-h2
-{
-    font-family: 'Neucha', cursive;
-}
-p
-{
-    font-family: 'Gloria Hallelujah', cursive;
-}
-li
-{
-    font-family: 'Gloria Hallelujah', cursive;
-}
-.colList
-{
-    columns: 2;
-    -webkit-columns: 2;
-    -moz-columns: 2;
-    list-style-type:none;
-}
-.lifesaver
-{
-    position:absolute;
-    width:15vh;
-    height:15vh;
-    background: url("lifeSaver.png") no-repeat center;
-    background-size: cover;
-    z-index:11;
-    text-align: center;
-    vertical-align:middle;
-    white-space:break-word;
-}
-.lifesaver div
-{
-    font-family: 'Neucha', cursive;
-    display: table-cell;
-    text-align: center;
-    vertical-align:middle;
-    height:inherit;
-    width:inherit;
-    font-size:4vh;
-}
-#ring_basicInfo
-{
-    left:45vw;
-    top:2vh;
-
-}
-#ring_skills
-{
-    top:42.5vh;
-    left:2vw;
-}
-#ring_hobbies
-{
-    top:42.5vh;
-    right:2vw;
-}
-#ring_workExperience
-{
-    bottom:2vh;
-    right:2vw;
-}
-#ring_education
-{
-    bottom:2vh;
-    left:2vw;
-}
-#ring_projects
-{
-    top:25vh;
-    left:25vw;
-}
-#ring_contactInfo
-{
-    top:25vh;
-    right:25vw;
-}
-.bubbles
-{
-    display:none;
-    position:absolute;
-    transition-duration:5s;
-    z-index:11;
-    height:3vh;
-    width:3vh;
-    background: url("bubble.png") no-repeat center;
-    background-size: contain;
-}
-.detail
-{
-    position:absolute;
-    z-index:12;
-    top:5vh;
-    height:90vh;
-    max-height:90vh;
-    width:90vw;
-    max-width:90vw;
-    margin:0 auto;
-    display:none;
-    left:5vw;
-    background: url("beach.jpg") no-repeat bottom;
-    background-color: #EED6AF;
-    background-size: cover;
-    opacity:1;
-    text-align:center;
-    border-radius: 5vh;
-    cursor:initial;
-}
-.detailContent
-{
-    width: 75%;
-    margin: 0 auto;
-    padding: 0;
-    max-height: 82vh;
-    height: 82vh;
-    overflow-x: auto;
-    overflow-y:none;
-}
-.detailScroller
-{
-	position:relative;
-	bottom:0;
-	height:5vh;
-	background-color:yellow;
-	width:5vh;
-	background: url("arrow-down.png") no-repeat center;
-	margin:0 auto;
-	border: thick solid white;
-	border-radius:50%;
-	display:none;
-}
-.returnToSea
-{
-	color:red;
-    min-width: 5vh;
-    width:auto;
-    float: right;
-    display: block;
-    text-align: right;
-    right: 5vh;
-    position: relative;
-    top: 5vh;
-    font-family: 'Dancing Script', cursive;
-}
-#githubProfile
-{
-    text-align:center;
-}
-#avatar
-{
-    display:block;
-    width:10vw;
-    height:10vw;
-    margin:0 auto;
-    background: url('avatar.jpg') no-repeat center;
-    background-size:cover;
-}
-#playerMover
-{
-    border-radius:50%;
-    position:absolute;
-    top: 45vh;
-    left: 45vw;
-    height: 10vh;
-    width: 10vw;
-    z-index:10;
-    transition-duration:0s;
-}
-#playerRotator
-{
-    height:100%;
-    width:100%;
-}
-#player
-{
-    width:100%;
-    height:100%;
-    background-size: contain;
-}
-.mover
-{
-    position:absolute;
-    z-index:9;
-    height:7vh;
-    width:7vh;
-    display:none;
-    transition-duration:5s;
-}
-.rotator
-{
-    height:100%;
-    width:100%;
-}
-.jellyfish
-{
-    height:100%;
-    width:100%;
-    background: url("jellyfish.png") no-repeat center;
-    background-size: contain;
-}
-        </style>
-        <script>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <script src="jquery-3.3.1.min.js"></script>
+	    <script src="jquery.ripples.js"></script>
+	    <link href="googleFonts.css" rel="stylesheet">
+	    <link href="mainStyle.css" rel="stylesheet">
+    <script>
             function displayInfo(name)
             {
                 var parent = document.getElementById(name);
@@ -361,12 +47,18 @@ li
                 <div id="howTo">
                     <h1>Matthew Mc Allister</h1>
                     <h2>Interactive CV</h2>
-                    <span id="avatar"></span>
+                    <span class="avatar"></span>
                     <p>Welcome to my interactive CV, Inspired by the works by <a href="http://www.rleonardi.com/interactive-resume/">Robby Leonardi</a>, I have designed my own Interactive CV.
                     You will be playing as a turtle swimming around in the ocean while you are continuosly persued by a manta stingray. Move your mouse to swim. Swimming into a life saver ring will teleport you to the beach, where you can view the relevent information about me<br>
                     Have Fun</p>
                     <button id="startGame" onclick="startGame();">Click to Begin</button>
                 </div>
+            </div>
+            <div id="mobileAvatar" class="avatar">
+            </div>
+            <div id="mobileTitle">
+            	<h1>Interactive CV</h1>
+            	<h2>Matthew Mc Allister</h2>
             </div>
             <div id="playerMover">
                 <div id="playerRotator">
@@ -378,26 +70,28 @@ li
                     <div id="shark" class="sharkOpen"></div>
                 </div>
             </div>
-            <div class="lifesaver" onmouseover="displayInfo('basicInfo');" id="ring_basicInfo">
-                <div>Basic<br>Info</div>
-            </div>
-            <div class="lifesaver" onmouseover="displayInfo('skills');" id="ring_skills">
-                <div>Skills</div>
-            </div>
-            <div class="lifesaver" onmouseover="displayInfo('hobbies');" id="ring_hobbies">
-                <div>Hobbies</div>
-            </div>
-            <div class="lifesaver" onmouseover="displayInfo('workExperience');" id="ring_workExperience">
-                <div>Work<br>Experience</div>
-            </div>
-            <div class="lifesaver" onmouseover="displayInfo('education');" id="ring_education">
-                <div>Education</div>
-            </div>
-            <div class="lifesaver" onmouseover="displayInfo('projects');" id="ring_projects">
-                <div>Projects</div>
-            </div>
-            <div class="lifesaver" onmouseover="displayInfo('contactInfo');" id="ring_contactInfo">
-                <div>Contact<br>Info</div>
+            <div id="lifesaverContainer">
+				<div class="lifesaver" onmouseover="displayInfo('basicInfo');" id="ring_basicInfo">
+				    <div>Basic<br>Info</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('skills');" id="ring_skills">
+				    <div>Skills</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('hobbies');" id="ring_hobbies">
+				    <div>Hobbies</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('workExperience');" id="ring_workExperience">
+				    <div>Work<br>Experience</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('education');" id="ring_education">
+				    <div>Education</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('projects');" id="ring_projects">
+				    <div>Projects</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('contactInfo');" id="ring_contactInfo">
+	                <div>Contact<br>Info</div>
+	            </div>
             </div>
             
             
@@ -407,12 +101,12 @@ li
                     <h1>My Basic Information</h1>
                     <h2>Me... In a nutshell</h2>
                     <p>
-                        I am a self taught, software developer who is passionate about development of just about anything that requires scripting.
-                        I enjoy working on both front-end, and backend projects and find joy in achiving goals and solving problems.<br>
+                        I am a self-taught, software developer who is passionate about the development of just about anything that requires scripting.
+                        I enjoy working on both front-end, and backend projects and find joy in achieving goals and solving problems.<br>
                         I am skilled in the following:
                     </p>
                     <ul style="list-style-type:none;">
-                        <li>php: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li>PHP: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
                         <li>JavaScript: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
                         <li>JQuery (& ajax): <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
                         <li>HTML: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
@@ -482,13 +176,6 @@ li
                         <li>ino: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
                         <li>Python: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
                         <li>Mac OS: <span style="color:yellow;">&starf;</span></li>
-                    </ul>
-                    <h2>What I'd like to Improve</h2>
-                    <ul style="text-align:left">
-                        <li>My Self-Control. Anger management is a big let down for me</li>
-                        <li>Communication Skills. I would really like to be able to communicate verbally</li>
-                        <li>Focus. I hate how easily I can get distracted. I often find myself going off on a tangent when I'm doing a project</li>
-                        <li>Planning. I need to work on improving my Planning Skills</li>
                     </ul>
                     <h2>My Personality (bassed on an assessment at plum.io)</h2>
                     <a href="https://app.plum.io/profile/f96dea596e6363f2e54e353c8c9c86a0b325391e" target="_blank">View my Profile directly from Plum.IO</a>
@@ -630,13 +317,13 @@ li
                         <ol style="text-align:left">
                             <li>Integrated Core Group
                                 <ol>
-                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report reads how many calls had been logged in the past week, how many have been completed, and how many have not been actioned. It also displays the total number of jobs in the system that are incomplete, as wll as a 5 day Schedule display, to show what work has been scheduled">2015: Call Centre Dashboard (PHP,JS,HTML,CSS)</li>
-                                    <li title="A customised report developed for Geze South Africa that reads data from their Job Management System (simPRO) via an API. This report is emailed daily to the client and is archived on our servers">2016: Work In Progress Report (CRONTAB,PHP,JS,HTML,CSS)</li>
-                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to ensure Account Managers are completing work in progress for a specific customer. It is emailed weekly to the Account Manager and is archived on our servers">2016: Key Accounts Report (CRONTAB,PHP,JS,HTML,CSS)</li>
-                                    <li title="A customised report developed for Geze South Africa that reads data from their Job Management System (simPRO) via an API. This report is emailed monthly to the client and is archived on our servers. The report compares data from the technicians in order for the client to determin how productive their field staff are">2017: Technician Hours Report (CRONTAB,PHP,JS,HTML,CSS,Google Charts API)</li>
-                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to ensure that Resource Co-Ordinaters are achieving a certain invoicing target each month. It is emailed daily to the Resource Co-Ordinaters and is archived on our servers">2017: Daily Job target Report  (CRONTAB,PHP,JS,HTML,CSS,Google Charts API)</li>
-                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on what work is in progress for a specified date. This report has a form handler and is manually executed">2018: Customised Runsheet (PHP,JS,HTML,CSS)</li>
-                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on which projects have the highest expected profitibility. Building this report allowed us to find a bug within simPRO that was not calculating estimated costs correctly. This report has a form handler and is manually executed">2018: Job Profitability Report (PHP,JS,HTML,CSS)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report reads how many calls had been logged in the past week, how many have been completed, and how many have not been actioned. It also displays the total number of jobs in the system that are incomplete, as wll as a 5 day Schedule display, to show what work has been scheduled">2015: Call Centre Dashboard (PHP, JS, HTML, CSS)</li>
+                                    <li title="A customised report developed for Geze South Africa that reads data from their Job Management System (simPRO) via an API. This report is emailed daily to the client and is archived on our servers">2016: Work In Progress Report (CRONTAB, PHP, JS, HTML, CSS)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to ensure Account Managers are completing work in progress for a specific customer. It is emailed weekly to the Account Manager and is archived on our servers">2016: Key Accounts Report (CRONTAB, PHP, JS, HTML, CSS)</li>
+                                    <li title="A customised report developed for Geze South Africa that reads data from their Job Management System (simPRO) via an API. This report is emailed monthly to the client and is archived on our servers. The report compares data from the technicians in order for the client to determin how productive their field staff are">2017: Technician Hours Report (CRONTAB, PHP, JS, HTML, CSS, Google Charts API)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to ensure that Resource Co-Ordinaters are achieving a certain invoicing target each month. It is emailed daily to the Resource Co-Ordinaters and is archived on our servers">2017: Daily Job target Report  (CRONTAB, PHP, JS, HTML, CSS, Google Charts API)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on what work is in progress for a specified date. This report has a form handler and is manually executed">2018: Customised Runsheet (PHP, JS, HTML, CSS)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on which projects have the highest expected profitibility. Building this report allowed us to find a bug within simPRO that was not calculating estimated costs correctly. This report has a form handler and is manually executed">2018: Job Profitability Report (PHP, JS, HTML, CSS)</li>
                                 </ol>
                             </li>
                         </ol>
@@ -703,57 +390,64 @@ function init() {
 }
 
 function getCursorXY(e) {
-    setTimeout(function(){document.getElementById('howTo').style.display = "none";},2000);
-    var player = document.getElementById('playerMover');
-    var halfheight = ($('#playerMover').height())/2;
-    var halfwidth = ($('#playerMover').width()) / 2;
-    var mouseX = ((window.Event) ? e.pageX : event.clientX);
-	var mouseY = ((window.Event) ? e.pageY : event.clientY);
-	var turtleX = $('#playerMover').position().left + halfwidth;
-	var turtleY = $('#playerMover').position().top + halfheight;
-	var deltaY = mouseY - turtleY;
-	var deltaX = mouseX - turtleX;
-	var radians = Math.atan2(deltaX,deltaY);
-    var degree = (radians * (180 / Math.PI) * -1) + 90;
-    document.getElementById('playerRotator').style.transform = "rotate(" + degree + "deg)";
-	player.style.left = (((window.Event) ? e.pageX : event.clientX) - halfwidth) +'px';
-	player.style.top = (((window.Event) ? e.pageY : event.clientY) - halfheight) +'px';
-	var shark = document.getElementById('sharkMover');
-    var halfheight = ($('#sharkMover').height())/2;
-    var halfwidth = ($('#sharkMover').width()) / 2;
-    var sharkX = $('#sharkMover').position().left + halfwidth;
-    var sharkY = $('#sharkMover').position().top + halfheight;
-    var deltaY = mouseY - sharkY;
-    var deltaX = mouseX - sharkX;
-    var radians = Math.atan2(deltaX,deltaY);
-    var degree = (radians * (180 / Math.PI) * -1) + 90;
-    document.getElementById('sharkRotator').style.transform = "rotate(" + degree + "deg)";
-    shark.style.left = (((window.Event) ? e.pageX : event.clientX) - halfwidth) +'px';
-    shark.style.top = (((window.Event) ? e.pageY : event.clientY) - halfheight) +'px';
-    $('body').ripples({dropRadius:10,perturbance:0.005,imageURL:"coralReef.jpg",resolution:450});
+	if($(window).innerWidth() >= 600)
+	{
+	    var player = document.getElementById('playerMover');
+	    var halfheight = ($('#playerMover').height())/2;
+	    var halfwidth = ($('#playerMover').width()) / 2;
+	    var mouseX = ((window.Event) ? e.pageX : event.clientX);
+		var mouseY = ((window.Event) ? e.pageY : event.clientY);
+		var turtleX = $('#playerMover').position().left + halfwidth;
+		var turtleY = $('#playerMover').position().top + halfheight;
+		var deltaY = mouseY - turtleY;
+		var deltaX = mouseX - turtleX;
+		var radians = Math.atan2(deltaX,deltaY);
+	    var degree = (radians * (180 / Math.PI) * -1) + 90;
+	    document.getElementById('playerRotator').style.transform = "rotate(" + degree + "deg)";
+		player.style.left = (((window.Event) ? e.pageX : event.clientX) - halfwidth) +'px';
+		player.style.top = (((window.Event) ? e.pageY : event.clientY) - halfheight) +'px';
+		var shark = document.getElementById('sharkMover');
+	    var halfheight = ($('#sharkMover').height())/2;
+	    var halfwidth = ($('#sharkMover').width()) / 2;
+	    var sharkX = $('#sharkMover').position().left + halfwidth;
+	    var sharkY = $('#sharkMover').position().top + halfheight;
+	    var deltaY = mouseY - sharkY;
+	    var deltaX = mouseX - sharkX;
+	    var radians = Math.atan2(deltaX,deltaY);
+	    var degree = (radians * (180 / Math.PI) * -1) + 90;
+	    document.getElementById('sharkRotator').style.transform = "rotate(" + degree + "deg)";
+	    shark.style.left = (((window.Event) ? e.pageX : event.clientX) - halfwidth) +'px';
+	    shark.style.top = (((window.Event) ? e.pageY : event.clientY) - halfheight) +'px';
+	    if($(window).innerWidth() >= 600){
+	    	$('body').ripples({dropRadius:10,perturbance:0.005,imageURL:"coralReef.jpg",resolution:450});
+	    }
+	}
 };
 setInterval(function(){
-    var player = document.getElementById('player');
-    if(player.className == 'playerOpen')
-    {
-        player.className = 'playerClosed';
-    }
-    else
-    {
-        player.className = 'playerOpen';
-    }
-    var shark = document.getElementById('shark');
-    if(shark.className == 'sharkOpen')
-    {
-        shark.className = 'sharkClosed';
-    }
-    else
-    {
-        shark.className = 'sharkOpen';
-    }
+	if($(window).innerWidth() >= 600)
+	{
+	    var player = document.getElementById('player');
+	    if(player.className == 'playerOpen')
+	    {
+	        player.className = 'playerClosed';
+	    }
+	    else
+	    {
+	        player.className = 'playerOpen';
+	    }
+	    var shark = document.getElementById('shark');
+	    if(shark.className == 'sharkOpen')
+	    {
+	        shark.className = 'sharkClosed';
+	    }
+	    else
+	    {
+	        shark.className = 'sharkOpen';
+	    }
+	}
 },250);
 setInterval(function(){moveBubbles();},4000);
-setInterval(function(){moveJellyfish();},2000);
+setInterval(function(){moveJellyfish();flashReturnToSea();},2000);
 function moveBubbles(){
     var bubbles = document.getElementsByClassName("bubbles");
     var i;
@@ -792,6 +486,20 @@ function moveJellyfish(){
         jellyfish[i].parentElement.parentElement.style.left = randY  + "px";
         jellyfish[i].parentElement.parentElement.style.display = "block";
     }
+}
+function flashReturnToSea(){
+	var element = document.getElementsByClassName('returnToSea');
+	for(i=0;i<element.length;i++)
+	{
+		if(element[i].style.backgroundColor == "yellow")
+		{
+			element[i].style.backgroundColor = "";
+		}
+		else
+		{
+			element[i].style.backgroundColor = "yellow"
+		}
+	}
 }
         </script>
     </body>
