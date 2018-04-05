@@ -8,6 +8,18 @@ body
     height:100vh;
     padding:0;
     margin: 0 auto;
+    cursor:none;
+}
+#body
+{
+    min-width:100vw;
+    max-width:100vw;
+    width:100vw;
+    min-height:100vh;
+    max-height:100vh;
+    height:100vh;
+    padding:0;
+    margin: 0 auto;
     background: url('coralReef.jpg') no-repeat center;
     background-color: #0077be;
     cursor:none;
