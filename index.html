@@ -5,7 +5,8 @@
 	    <script src="jquery-3.3.1.min.js"></script>
 	    <script src="jquery.ripples.js"></script>
 	    <link href="googleFonts.css" rel="stylesheet">
-	    <link href="mainStyle.css" rel="stylesheet">
+	    <link href="mainStyle.css" media="screen" rel="stylesheet">
+	    <link href="print.css" media="print" rel="stylesheet">
     <script>
             function displayInfo(name)
             {
@@ -49,52 +50,21 @@
                     <h2>Interactive CV</h2>
                     <span class="avatar"></span>
                     <p>Welcome to my interactive CV, Inspired by the works by <a href="http://www.rleonardi.com/interactive-resume/">Robby Leonardi</a>, I have designed my own Interactive CV.
-                    You will be playing as a turtle swimming around in the ocean while you are continuosly persued by a manta stingray. Move your mouse to swim. Swimming into a life saver ring will teleport you to the beach, where you can view the relevent information about me<br>
+                    You will be playing as a turtle swimming around in the ocean while you are continuosly persued by a manta stingray. Move your mouse to swim. Swimming into a life saver ring will teleport you to the beach, where you can view the relevant information about me<br>
                     Have Fun</p>
                     <button id="startGame" onclick="startGame();">Click to Begin</button>
                 </div>
             </div>
-            <div id="mobileAvatar" class="avatar">
-            </div>
+            <div id="mobileAvatar" class="avatar"></div>
+            <div id="printAvatar" class="avatar"></div>
             <div id="mobileTitle">
             	<h1>Interactive CV</h1>
             	<h2>Matthew Mc Allister</h2>
             </div>
-            <div id="playerMover">
-                <div id="playerRotator">
-                    <div id="player" class="playerOpen"></div>
-                </div>
+            <div id="printTitle">
+            	<h1>Interactive CV<br>(print version)</h1>
+            	<h2>Matthew Mc Allister</h2>
             </div>
-            <div id="sharkMover" onmouseover="lunch();">
-                <div id="sharkRotator">
-                    <div id="shark" class="sharkOpen"></div>
-                </div>
-            </div>
-            <div id="lifesaverContainer">
-				<div class="lifesaver" onmouseover="displayInfo('basicInfo');" id="ring_basicInfo">
-				    <div>Basic<br>Info</div>
-				</div>
-				<div class="lifesaver" onmouseover="displayInfo('skills');" id="ring_skills">
-				    <div>Skills</div>
-				</div>
-				<div class="lifesaver" onmouseover="displayInfo('hobbies');" id="ring_hobbies">
-				    <div>Hobbies</div>
-				</div>
-				<div class="lifesaver" onmouseover="displayInfo('workExperience');" id="ring_workExperience">
-				    <div>Work<br>Experience</div>
-				</div>
-				<div class="lifesaver" onmouseover="displayInfo('education');" id="ring_education">
-				    <div>Education</div>
-				</div>
-				<div class="lifesaver" onmouseover="displayInfo('projects');" id="ring_projects">
-				    <div>Projects</div>
-				</div>
-				<div class="lifesaver" onmouseover="displayInfo('contactInfo');" id="ring_contactInfo">
-	                <div>Contact<br>Info</div>
-	            </div>
-            </div>
-            
-            
             <div class="detail" id="basicInfo">
                 <span class="returnToSea" onmouseover="hideInfo('basicInfo');">Back to Sea</span>
                 <div class="detailContent">
@@ -132,7 +102,6 @@
                         <li>Mobile Phone: (+27) 071 158 3596</li>
                         <li>Facebook: <a target="_blank" href="https://facebook.com/bbuusshhiiee">https://facebook.com/bbuusshhiiee</a></li>
                         <li>Github: <a target="_blank" href="https://github.com/matatacmca">https://github.com/matatacmca</a></li>
-                        <li>Alison.com: <a target="_blank" href="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister">https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister</a></li>
                     </ul>
                 </div>
                 <div class="detailScroller"></div>
@@ -142,7 +111,7 @@
                 <div class="detailContent">
                     <h1>My Skills</h1>
                     <h2>How I rank the things I can do</h2>
-                    <p>
+                    <p class="noPrint">
                     	Hover over the item to see why I scored it the way I did.
                     </p>
                     <ul class="colList">
@@ -167,7 +136,7 @@
                         <li>CSS: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
                         <li>Apache Web Server: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
                         <li>Apache CouchDB: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
-                        <li>ChromeOS: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+                        <li>Chrome OS: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
                         <li>Ubuntu (or any linux OS): <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
                         <li>JQuery: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
                         <li>JavaScript: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
@@ -177,9 +146,43 @@
                         <li>Python: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
                         <li>Mac OS: <span style="color:yellow;">&starf;</span></li>
                     </ul>
-                    <h2>My Personality (bassed on an assessment at plum.io)</h2>
-                    <a href="https://app.plum.io/profile/f96dea596e6363f2e54e353c8c9c86a0b325391e" target="_blank">View my Profile directly from Plum.IO</a>
-                    <iframe style="width:100%;height:75vh" src="plum.html"></iframe>
+                    <div class="iframedContent">
+	                    <h2>My Personality (based on an assessment at plum.io)</h2>
+	                    <a href="https://app.plum.io/profile/f96dea596e6363f2e54e353c8c9c86a0b325391e" target="_blank">View my Profile directly from Plum.IO</a>
+	                    <iframe style="width:100%;height:75vh" src="plum.html"></iframe>
+                    </div>
+                    <div class="iframedReplacer">
+                    	<h2>My Personality (based on an assessment at plum.io)</h2>
+                    	<ul>
+							<li>Task Management
+								<p><strong>Your Task Management is in the top 5% of the workforce.</strong> You have an extraordinary proficiency for setting goals, monitoring progress, and taking initiative to improve your work.
+									You have an extraordinary ability to work independently, establish and meet challenging deadlines, persevere even when initially unsuccessful, and not settle for “good enough."
+									You have the ability for maintaining accuracy and attention to detail, reporting and recordkeeping, setting goals and creating plans to accomplish the work, as well as monitoring and controlling resources.
+									You excel at learning what is important to get the job done right and avoiding costly mistakes. You are also excellent at understanding new procedures and explaining them to others.
+								</p>
+							</li>
+							<li>Decision Making
+								<p>
+									<strong>Your Decision Making is in the top 15% of the workforce.</strong> You have a strong proficiency for making high-quality decisions based on limited information.
+									You have the ability for being thorough, deliberate and timely, and having attention to detail.
+									You have a disposition for gathering and critically evaluating relevant information, recognizing solutions and using facts, logic and experience to buttress your opinions.
+									You have a strong ability for expressing your opinions and beliefs and a tendency for exerting dominance.
+								</p>
+							</li>
+							<li>Leadership
+								<p>
+									<strong>Your Leadership is in the top 15% of the workforce.</strong> You have a strong proficiency for taking charge and motivating group members toward common goals.
+									You have an extraordinary ability to establish short and long term goals, specify the strategies and actions to achieve them, and have the perseverance to overcome obstacles and failures to attain objectives.
+									You have a strong ability to express your beliefs and opinions even when they are contrary to those of others, motivate and inspire others to extend themselves to attain goals, and exercise your authority.
+									You can keep others informed despite pressing deadlines, remain tactful in stressful situations, and compromise to achieve organizational goals.
+									You excel at collecting and analyzing the information necessary for providing effective direction to groups of people. You are also very good at developing strategic plans and explaining to others how to accomplish those plans.
+									You generally understand what to say to motivate people to follow your direction.
+									You can recognize and deal positively with obstacles and failures, share responsibility for team direction and performance while establishing and maintaining effective workplace relations.
+								</p>
+							</li>
+                    	</ul>
+                    	<p>You can view this assesment online at <a href="https://app.plum.io/profile/f96dea596e6363f2e54e353c8c9c86a0b325391e" target="_blank">https://app.plum.io/profile/f96dea596e6363f2e54e353c8c9c86a0b325391e</a></p>
+                	</div>
                 </div>
                 <div class="detailScroller"></div>
             </div>
@@ -191,7 +194,7 @@
                     <ul class="colList">
                         <li>Race Marshalling for KMA</li>
                         <li>Assistant Troop Scouter at <a target="_blank" href="https://www.google.co.za/maps/place/Jan+Smuts+Scouts+Hall/@-26.1401338,28.1375546,17z/data=!3m1!4b1!4m5!3m4!1s0x1e95125e9c1016d5:0x1f1434a057227d8f!8m2!3d-26.1401386!4d28.1397433?hl=en">Jan Smuts Scout Group</a></li>
-                        <li>Tinkering on all sorts of miscelaneous projects</li>
+                        <li>Tinkering on all sorts of miscellaneous projects</li>
                         <li>Action Cricket at <a target="_blank" href="https://www.google.co.za/maps/place/Edenvale+Action+Sports+Arena/@-26.128328,28.1840609,17z/data=!3m1!4b1!4m5!3m4!1s0x1e95139eee63910b:0xe0657c1df89fe3f5!8m2!3d-26.1283328!4d28.1862496?hl=en">Edenvale Action Sports Arena</a></li>
                     </ul>
                 </div>
@@ -210,11 +213,11 @@
                                 <strong>Responsibilities:</strong>
                             </p>
                             <ul>
-                                <li>Designing analytic reports that integrate with the company's Job Management System in order to better plan and guage performance of selected staff groups</li>
+                                <li>Designing analytic reports that integrate with the company's Job Management System in order to better plan and gauge performance of selected staff groups</li>
                                 <li>Designing operational workflows in order to better streamline the operational process of the company to ensure exceptional service delivery</li>
-                                <li>Work through any service delivery isues and implement a process to prevent issues from recurring in the future</li>
+                                <li>Work through any service delivery issues and implement a process to prevent issues from recurring in the future</li>
                                 <li>Occasionally performed duties of a <a href="#SnrTechManager">Senior Technical Manager</a></li>
-                                <li>Regularly perfomed duties of an <a href="#ITAdministrator">IT Administrator</a></li>
+                                <li>Regularly performed duties of an <a href="#ITAdministrator">IT Administrator</a></li>
                             </ul>
                         </li>
                         <li>
@@ -228,7 +231,7 @@
                                 <li>Installed GSM Monitoring Units on select sites for cold rooms, portable chest freezers, and generators</li>
                                 <li>Configured an off-site alarm monitoring control room for a client</li>
                                 <li>Designed two Customised Reports for a client that integrates with their Job Management System</li>
-                                <li>Regularly perfomed duties of an <a href="#ITAdministrator">IT Administrator</a></li>
+                                <li>Regularly performed duties of an <a href="#ITAdministrator">IT Administrator</a></li>
                             </ul>
                         </li>
                         <li>
@@ -238,9 +241,9 @@
                                 <strong>Responsibilities:</strong>
                             </p>
                             <ul>
-                                <li>Configuration of company IT infrustructure including Networking, Printers, Server Configuration, etc</li>
+                                <li>Configuration of company IT infrastructure including Networking, Printers, Server Configuration, etc</li>
                                 <li>Configuration of LAMP server</li>
-                                <li>Routine Maintenence of web server (WordPress)</li>
+                                <li>Routine Maintenance of web server (WordPress)</li>
                                 <li>Implemented & Trained two simPRO (Job Management System) builds for clients</li>
                                 <li>Implemented & Trained simPRO (Job Management System) for internal Staff</li>
                                 <li>Implemented $ Trained Gsuite for internal Staff</li>
@@ -257,9 +260,9 @@
                                 <strong>Responsibilities:</strong>
                             </p>
                             <ul>
-                                <li>Conduct site surveys on newly sold maintenance contracts and ensure that all relevent equipment wass added to the asset register on the Job Management system</li>
-                                <li>Assisted in an IT infrustructure upgrade from Desktop to Terminal Services which subsequently involved me in IT support</li>
-                                <li>Routine Maintenence of web server (WordPress)</li>
+                                <li>Conduct site surveys on newly sold maintenance contracts and ensure that all relevant equipment was added to the asset register on the Job Management system</li>
+                                <li>Assisted in an IT infrastructure upgrade from Desktop to Terminal Services which subsequently involved me in IT support</li>
+                                <li>Routine Maintenance of web server (WordPress)</li>
                             </ul>
                         </li>
                         <li>
@@ -269,8 +272,8 @@
                                 <strong>Responsibilities:</strong>
                             </p>
                             <ul>
-                                <li>Conduct departmental stock couns on a daily basis</li>
-                                <li>Assist customers in store and attemp to up-sell their purchases</li>
+                                <li>Conduct departmental stock counts on a daily basis</li>
+                                <li>Assist customers in store and attempt to up-sell their purchases</li>
                                 <li>Participate in bi-annual stock takes</li>
                             </ul>
                         </li>
@@ -300,8 +303,25 @@
                     <p style="text-align:left">
                         <strong>Additional Qualifications</strong><br>
                     </p>
-                    <a href="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister" target="_blank">Alison.com:</a><br>
-                    <iframe style="margin:0 auto;width:90%;height:75vh;" src="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister"></iframe>
+                    <div class="iframedContent">
+	                    <a href="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister" target="_blank">Alison.com:</a><br>
+	                    <iframe style="margin:0 auto;width:90%;height:75vh;" src="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister"></iframe>
+                    </div>
+                    <div class="iframedReplacer">
+                    	<h2>Alison.com</h2>
+                    	<p>I have completed the following</p>
+                    	<ul>
+                    		<li>Fundamentals of Network Security</li>
+                    		<li>Digital Communication Networks</li>
+                    		<li>Understanding Cryptography and Its Role in Digital Communications</li>
+                    		<li>Web Page Design Using HTML5 and CSS3</li>
+                    		<li>Computer Networking - Local Area Networks and the OSI Model</li>
+                    		<li>Computer Networking - Wired and Wireless Networks and Protocols</li>
+                    		<li>Wide Area Networks and Networking Services and Security</li>
+                    		<li>Computer Networking - Digital Network Security</li>
+                    	</ul>
+                    	<p>You can view my Alison profile online at <a href="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister" target="_blank">https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister</a></p>
+                    </div>
                 </div>
                 <div class="detailScroller"></div>
             </div>
@@ -356,22 +376,56 @@ $.ajax({
                 </div>
                 <div class="detailScroller"></div>
             </div>
-            <!--BUBBLES--><div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
-                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+            <div id="assets">
+            	<div id="playerMover">
+                <div id="playerRotator">
+                    <div id="player" class="playerOpen"></div>
+                </div>
             </div>
-            <!--FISH--><div>
-                <div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div>
-                <div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div>
-                
+            <div id="sharkMover" onmouseover="lunch();">
+                <div id="sharkRotator">
+                    <div id="shark" class="sharkOpen"></div>
+                </div>
+            </div>
+            <div id="lifesaverContainer">
+				<div class="lifesaver" onmouseover="displayInfo('basicInfo');" id="ring_basicInfo">
+				    <div>Basic<br>Info</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('skills');" id="ring_skills">
+				    <div>Skills</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('hobbies');" id="ring_hobbies">
+				    <div>Hobbies</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('workExperience');" id="ring_workExperience">
+				    <div>Work<br>Experience</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('education');" id="ring_education">
+				    <div>Education</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('projects');" id="ring_projects">
+				    <div>Projects</div>
+				</div>
+				<div class="lifesaver" onmouseover="displayInfo('contactInfo');" id="ring_contactInfo">
+	                <div>Contact<br>Info</div>
+	            </div>
+            </div>
+	            <!--BUBBLES--><div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+	            </div>
+	            <!--FISH--><div>
+	                <div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div>
+	                <div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div>
+                </div>
             </div>
         </div>
     <script>

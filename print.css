@@ -1,0 +1,128 @@
+@media print{@page {size: portrait}}
+.iframedContent
+{
+	display:none;
+}
+.avatar
+{
+    display:block;
+    width:20vw;
+    height:20vw;
+    margin:0 auto;
+    background: url('avatar.jpg') no-repeat center;
+    background-size:cover;
+    border-radius:50%;
+}
+a
+{
+    text-decoration:none;
+    color:red;
+}
+h1
+{
+    font-family: 'Roboto', sans-serif;
+}
+h2
+{
+    font-family: 'Neucha', cursive;
+}
+p
+{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+li
+{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+body
+{
+    padding:0;
+    margin: 0 auto;
+    cursor:auto;
+}
+ul
+{
+	list-style-type:none;
+}
+#howToBG
+{
+	display:none;
+}
+#mobileAvatar
+{
+	display:none;
+	width:20vw;
+	height:20vw;
+	
+}
+#mobileAvatar
+{
+	display:block;
+	width:20vw;
+	height:20vw;
+}
+#lifesaverContainer
+{
+	display:none;
+}
+.detail
+{
+	display:block;
+	position:initial;
+}
+#mobileAvatar
+{
+	display:none;
+}
+#mobileTitle
+{
+	display:none;
+}
+#printTitle
+{
+	display:block;
+	text-align:center;
+}
+#playerMover
+{
+	display:none;
+}
+#sharkMover
+{
+	display:none;
+}
+.returnToSea
+{
+	display:none;
+}
+.detail
+{
+	height:auto;
+	max-height:none;
+	border:thin solid black;
+	width:90%;
+	margin:0 auto;
+}
+.detailContent
+{
+	height:auto;
+	max-height:none;
+	overflow-x:initial;
+}
+.noPrint
+{
+	display:none;
+}
+.mover
+{
+	display:none;
+}
+.bubbles
+{
+	display:none;
+}
+#assets
+{
+	content:"";
+	display:none;
+}
