@@ -354,36 +354,55 @@
 	                    <ol style="text-align:left">
 	                        <li>
 	                            <a target="_blank" href="https://github.com/matatacmca">Github</a><br>
-	                            Why continuously update dynamic content? jQuery (ajax) & github API is used to update the below repositories
-	                            <div id="githubRepos">
-	                            </div>
-	                                <script>
-function getLanguages(repo) {
-	$.ajax({
-		url:'https://api.github.com/repos/matatacmca/' + repo + '/languages',
-		sucess:function(msg){
-			return(msg);
-		}
-	});
+	                            Why continuously update dynamic content? XHTML & github API is used to update the below repositories
+	                            <div id="githubRepos"></div>
+	                            <script>
+var result = "";
+$.ajax({
+    url:"https://api.github.com/users/matatacmca/repos",
+    async: false,
+    success:function(data) {
+        //view_data = response_data_json.view_data;
+        doWork(data); // Pass data to a function
+    }
+ });
+
+function doWork(data)
+{
+	result = "<ol>";
+	for(i=0;i<data.length;i++)
+	{
+		result = result + "<li title=\"" + data[i]['description'] +"\"><a href=\"" + data[i]['html_url'] + "\" target=\"_blank\">" + data[i]['name'] + "</a><br><strong>Languages:</strong>";
+		console.log(data[i]);
+		$.ajax({
+			async: false,
+			url: data[i]['languages_url'],
+			success: function(msg){
+				result = result + "<ul>";
+				console.log(msg);
+				var total = 0;
+				var language;
+				for(language in msg)
+				{
+					amount = msg[language];
+					total += msg[language];
+					window.alert("Lang: " + language + "; amount: " + amount + "; Total: " + total);
+				}
+				for(language in msg)
+				{
+					percent = ((msg[language]/total) * 100).toFixed(2);
+					result = result + "<li>" + language + ": " + percent + "%</li>";
+				}
+				result = result + "</ul>";
+			}
+		});
+		result = result + "</li>"
+	}
+	result = result + "</ol>"
+	console.log(result);
+	document.getElementById('githubRepos').innerHTML = result;
 }
-	$.ajax({
-	    url: 'https://api.github.com/users/matatacmca/repos',
-	    success: function(msg){
-	        var result = "<ol>";
-	        var i;
-	        for(i = 0; i < msg.length; i++)
-	        {
-	            result = result + "<li title=\"" + msg[i]['description'] + "\">" + msg[i]['created_at'].substring(0,4) + ": <a target=\"_blank\" href=\"" +msg[i]['html_url'] + "\">"+ msg[i]['name'] + "</a>";
-	            result = result + "<ul>"
-	            //result = result + getLanguages(msg[i]['name'])
-	            window.alert(getLanguages(msg[i]['name']));
-	            result = result +"</ul></li>";
-	        }
-	        result = result + "</ol>";
-	        $('#githubRepos').html(result);
-	    }
-	});
-	                                </script>
+	                            </script>
 	                        </li>
 	                    </ol>
 	                </div>
