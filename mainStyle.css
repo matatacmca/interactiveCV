@@ -41,9 +41,11 @@ body
     height: 10vh;
     width: 10vw;
     z-index:10;
-    -webkit-transition-duration:1.5s;
-         -o-transition-duration:1.5s;
-            transition-duration:1.5s;
+	-webkit-transition-duration:1.5s;
+	-moz-transition-duration:1.5s;
+	-o-transition-duration:1.5s;
+	-ms-transition-duration:1.5s;
+	transition-duration:1.5s;
 }
 #shark
 {
@@ -65,9 +67,11 @@ body
     font-family: 'Gloria Hallelujah', cursive;
     border-radius:100px;
     cursor:pointer;
-    -webkit-transition-duration:2s;
-         -o-transition-duration:2s;
-            transition-duration:2s;
+	-webkit-transition-duration:2s;
+	-moz-transition-duration:2s;
+	-ms-transition-duration:2s;
+	-o-transition-duration:2s;
+	transition-duration:2s;
     font-size:2em;
 }
 #startGame:hover 
@@ -132,6 +136,9 @@ li
 .colList
 {
     -webkit-columns: 2;
+    -moz-columns: 2;
+    -ms-columns: 2;
+    -o-columns: 2;
     columns: 2;
     list-style-type:none;
     overflow:hidden;
@@ -199,8 +206,10 @@ li
     display:none;
     position:absolute;
     -webkit-transition-duration:5s;
-         -o-transition-duration:5s;
-            transition-duration:5s;
+    -moz-transition-duration:5s;
+    -ms-transition-duration:5s;
+	-o-transition-duration:5s;
+	transition-duration:5s;
     z-index:11;
     height:3vh;
     width:3vh;
@@ -264,8 +273,10 @@ li
     font-family: 'Dancing Script', cursive;
     font-size:1.5em;
     -webkit-transition-duration:1s;
-         -o-transition-duration:1s;
-            transition-duration:1s;
+    -moz-transition-duration:1s;
+    -ms-transition-duration:1s;
+	-o-transition-duration:1s;
+	transition-duration:1s;
     padding:1vh;
     border-radius:2.5vh;
 }
@@ -297,8 +308,10 @@ li
     width: 10vw;
     z-index:10;
     -webkit-transition-duration:0s;
-         -o-transition-duration:0s;
-            transition-duration:0s;
+    -moz-transition-duration:0s;
+    -ms-transition-duration:0s;
+	-o-transition-duration:0s;
+	transition-duration:0s;
 }
 #playerRotator
 {
@@ -318,9 +331,11 @@ li
     height:7vh;
     width:7vh;
     display:none;
-    -webkit-transition-duration:5s;
-         -o-transition-duration:5s;
-            transition-duration:5s;
+	-webkit-transition-duration:5s;
+	-moz-transition-duration:0s;
+	-ms-transition-duration:0s;
+	-o-transition-duration:5s;
+	transition-duration:5s;
 }
 .rotator
 {
@@ -405,6 +420,9 @@ li
 	.colList
 	{
 		-webkit-columns: 1;
+		-moz-columns: 1;
+		-ms-columns: 1;
+		-o-columns: 1;
 	    columns: 1;
 	}
 }
