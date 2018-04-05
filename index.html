@@ -51,8 +51,9 @@
 	                    <h2>Interactive CV</h2>
 	                    <span class="avatar"></span>
 	                    <p>Welcome to my interactive CV, Inspired by the works by <a href="http://www.rleonardi.com/interactive-resume/">Robby Leonardi</a>, I have designed my own Interactive CV.
-	                    You will be playing as a turtle swimming around in the ocean while you are continuosly persued by a manta stingray. Move your mouse to swim. Swimming into a life saver ring will teleport you to the beach, where you can view the relevant information about me<br>
-	                    Have Fun</p>
+	                    You will be playing as a turtle swimming around in the ocean while you are continuosly persued by a manta stingray. Move your mouse to swim. Swimming into a life saver ring will teleport you to the beach, where you can view the relevant information about me<br></p>
+	                    <p>Click on the print Icon at any time, to view the print friendly version </p>
+	                    <p>Have Fun</p>
 	                    <button id="startGame" onclick="startGame();">Click to Begin</button>
 	                </div>
 	            </div>
@@ -66,6 +67,7 @@
 	            	<h1>Interactive CV<br>(print version)</h1>
 	            	<h2>Matthew Mc Allister</h2>
 	            </div>
+	            <div onclick="window.print();" class="printer"></div>
 	            <div class="detail" id="basicInfo">
 	                <span class="returnToSea" onmouseover="hideInfo('basicInfo');">Back to Sea</span>
 	                <div class="detailContent">
@@ -378,7 +380,6 @@ function doWork(data)
 			url: data[i]['languages_url'],
 			success: function(msg){
 				result = result + "<ul>";
-				console.log(msg);
 				var total = 0;
 				var language;
 				for(language in msg)
@@ -462,6 +463,7 @@ function doWork(data)
     moveBubbles();
     moveJellyfish();
 function startGame(){
+	document.getElementsByClassName('printer')[0].style.display="block";
     document.getElementById('howToBG').style.display ="none";
     init();
 };
@@ -503,7 +505,7 @@ function getCursorXY(e) {
 	    shark.style.left = (((window.Event) ? e.pageX : event.clientX) - halfwidth) +'px';
 	    shark.style.top = (((window.Event) ? e.pageY : event.clientY) - halfheight) +'px';
 	    if($(window).innerWidth() >= 600){
-	    	$('body').ripples({dropRadius:10,perturbance:0.005,imageURL:"coralReef.jpg",resolution:450});
+	    	$('#body').ripples({dropRadius:10,perturbance:0.005,imageURL:"coralReef.jpg",resolution:450});
 	    }
 	}
 };

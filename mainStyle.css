@@ -10,6 +10,21 @@ body
     margin: 0 auto;
     cursor:none;
 }
+.printer
+{
+	position:absolute;
+    width:15vh;
+    height:15vh;
+    background: url("print-512.png") no-repeat center;
+    background-size: contain;
+    z-index:100;
+    text-align: center;
+    vertical-align:middle;
+    top:1vh;
+    right:1vh;
+    cursor:pointer;
+    display:none;
+}
 #body
 {
     min-width:100vw;
@@ -392,6 +407,18 @@ li
 	    background-color: #0077be;
 	    cursor:auto;
     }
+    #body
+    {
+	    min-height:100vh;
+	    max-height:none;
+	    height:auto;
+	    padding:0;
+	    margin: 0 auto;
+	    background-repeat-y:repeat;
+	    background-position:top;
+	    background-color: #0077be;
+	    cursor:auto;
+    }
     #howToBG
     {
     	display:none;
@@ -446,7 +473,21 @@ li
     .iframedReplacer
     {
     	display:block;
+    	word-wrap:break-word;
     }
+    .printer
+	{
+		position:unset;
+		margin:0 auto;
+	    width:7vh;
+	    height:5vh;
+	    background-size: contain;
+	    z-index:100;
+	    text-align: center;
+	    vertical-align:middle;
+	    cursor:pointer;
+	    display:block;
+	}
 }
 @media only screen and (max-width: 850px){
 	.colList

@@ -1,4 +1,8 @@
 @media print{@page {size: portrait}}
+.printer
+{
+	display:none;
+}
 .iframedContent
 {
 	display:none;
@@ -45,7 +49,35 @@ li
     width:100%;
     height:auto;
     background-color: #0077be;
+    background-size:0;
 
+}
+body
+{
+    padding:0;
+    margin: 0 auto;
+    cursor:auto;
+    background-image:none;
+    min-width:100%;
+    max-width:100%;
+    width:100%;
+    height:auto;
+    background-color: #0077be;
+    background-size:0;
+
+}
+.jquery-ripples
+{
+	padding:0;
+    margin: 0 auto;
+    cursor:auto;
+    background-image:none;
+    min-width:100%;
+    max-width:100%;
+    width:100%;
+    height:auto;
+    background-color: #0077be;
+    background-size:0;
 }
 ul
 {
@@ -133,13 +165,12 @@ ul
 	content:"";
 	display:none;
 }
-.jquery-ripples
-{
-	background:none;
-}
 #semi
 {
 	background-color:#ffffff;
 	padding:0;
-	margin:0 auto;
+	margin: 0 auto;
+	width:101%;
+	
+	
 }
