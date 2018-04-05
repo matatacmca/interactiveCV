@@ -1,0 +1,798 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery.ripples.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Gloria+Hallelujah|Neucha|Roboto" rel="stylesheet">
+        <style>
+body
+{
+    min-width:100vw;
+    max-width:100vw;
+    width:100vw;
+    min-height:100vh;
+    max-height:100vh;
+    height:100vh;
+    padding:0;
+    margin: 0 auto;
+    background: url('coralReef.jpg') no-repeat center;
+    background-color: #0077be;
+    cursor:none;
+}
+#semi
+{
+    background-color:rgba(125,125,125,0.3);
+    margin:0;
+    height:100%;
+    width:100%;
+}
+.playerOpen
+{
+    background: url("Turtle Open.png") no-repeat center;
+}
+.playerClosed
+{
+    background: url("Turtle Closed.png") no-repeat center;
+}
+#sharkRotator
+{
+    height:100%;
+    width:100%;
+}
+#sharkMover
+{
+    border-radius:50%;
+    position:absolute;
+    top: 5vh;
+    left: 5vw;
+    height: 10vh;
+    width: 10vw;
+    z-index:10;
+    transition-duration:1.5s;
+}
+#shark
+{
+    width:100%;
+    height:100%;
+    background-size: contain;
+}
+.sharkOpen
+{
+    background: url("shark Open.png") no-repeat center;
+}
+.sharkClosed
+{
+    background: url("shark Closed.png") no-repeat center;
+}
+#startGame
+{
+    width:25%;
+    font-size: 16px;
+    font-family: 'Gloria Hallelujah', cursive;
+    border-radius:100px;
+    cursor:pointer;
+    transition-duration:2s;
+}
+#startGame:hover 
+{
+    background-color:red;
+}
+#howToBG
+{
+    cursor:auto;
+    position:absolute;
+    z-index:20;
+    bottom:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    margin:0 auto;
+    display:block;
+    background-color:#000000;
+    opacity:1;
+    text-align:center;
+}
+#howTo
+{
+    display:block;
+    position:absolute;
+    z-index:20;
+    width:50vw;
+    height:90vh;
+    max-height:90vh;
+    overflow-y: scroll;
+    margin:0 auto;
+    display:block;
+    left:25vw;
+    top:5vh;
+    background-color:rgba(255,125,125,0.7);
+    opacity:1;
+    text-align:center;
+    border-radius: 5vh 5vh 0vh 0vh;
+}
+a
+{
+    text-decoration:none;
+    color:red;
+}
+h1
+{
+    font-family: 'Roboto', sans-serif;
+}
+h2
+{
+    font-family: 'Neucha', cursive;
+}
+p
+{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+li
+{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.colList
+{
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-type:none;
+}
+.lifesaver
+{
+    position:absolute;
+    width:15vh;
+    height:15vh;
+    background: url("lifeSaver.png") no-repeat center;
+    background-size: cover;
+    z-index:11;
+    text-align: center;
+    vertical-align:middle;
+    white-space:break-word;
+}
+.lifesaver div
+{
+    font-family: 'Neucha', cursive;
+    display: table-cell;
+    text-align: center;
+    vertical-align:middle;
+    height:inherit;
+    width:inherit;
+    font-size:4vh;
+}
+#ring_basicInfo
+{
+    left:45vw;
+    top:2vh;
+
+}
+#ring_skills
+{
+    top:42.5vh;
+    left:2vw;
+}
+#ring_hobbies
+{
+    top:42.5vh;
+    right:2vw;
+}
+#ring_workExperience
+{
+    bottom:2vh;
+    right:2vw;
+}
+#ring_education
+{
+    bottom:2vh;
+    left:2vw;
+}
+#ring_projects
+{
+    top:25vh;
+    left:25vw;
+}
+#ring_contactInfo
+{
+    top:25vh;
+    right:25vw;
+}
+.bubbles
+{
+    display:none;
+    position:absolute;
+    transition-duration:5s;
+    z-index:11;
+    height:3vh;
+    width:3vh;
+    background: url("bubble.png") no-repeat center;
+    background-size: contain;
+}
+.detail
+{
+    position:absolute;
+    z-index:12;
+    top:5vh;
+    height:90vh;
+    max-height:90vh;
+    width:90vw;
+    max-width:90vw;
+    margin:0 auto;
+    display:none;
+    left:5vw;
+    background: url("beach.jpg") no-repeat bottom;
+    background-color: #EED6AF;
+    background-size: cover;
+    opacity:1;
+    text-align:center;
+    border-radius: 5vh;
+    cursor:initial;
+}
+.detailContent
+{
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+    max-height: 82vh;
+    height: 82vh;
+    overflow-x: auto;
+    overflow-y:none;
+}
+.detailScroller
+{
+	position:relative;
+	bottom:0;
+	height:5vh;
+	background-color:yellow;
+	width:5vh;
+	background: url("arrow-down.png") no-repeat center;
+	margin:0 auto;
+	border: thick solid white;
+	border-radius:50%;
+	display:none;
+}
+.returnToSea
+{
+	color:red;
+    min-width: 5vh;
+    width:auto;
+    float: right;
+    display: block;
+    text-align: right;
+    right: 5vh;
+    position: relative;
+    top: 5vh;
+    font-family: 'Dancing Script', cursive;
+}
+#githubProfile
+{
+    text-align:center;
+}
+#avatar
+{
+    display:block;
+    width:10vw;
+    height:10vw;
+    margin:0 auto;
+    background: url('avatar.jpg') no-repeat center;
+    background-size:cover;
+}
+#playerMover
+{
+    border-radius:50%;
+    position:absolute;
+    top: 45vh;
+    left: 45vw;
+    height: 10vh;
+    width: 10vw;
+    z-index:10;
+    transition-duration:0s;
+}
+#playerRotator
+{
+    height:100%;
+    width:100%;
+}
+#player
+{
+    width:100%;
+    height:100%;
+    background-size: contain;
+}
+.mover
+{
+    position:absolute;
+    z-index:9;
+    height:7vh;
+    width:7vh;
+    display:none;
+    transition-duration:5s;
+}
+.rotator
+{
+    height:100%;
+    width:100%;
+}
+.jellyfish
+{
+    height:100%;
+    width:100%;
+    background: url("jellyfish.png") no-repeat center;
+    background-size: contain;
+}
+        </style>
+        <script>
+            function displayInfo(name)
+            {
+                var parent = document.getElementById(name);
+                parent.style.display="block";
+                document.getElementById('player').style.display = "none";
+                var children = parent.children;
+                for(i=0;i<children.length;i++)
+                {
+                	if(children[i].className == "detailContent")
+                	{
+                		if (children[i].offsetHeight < children[i].scrollHeight)
+                		{
+                			for(j=0;j<children.length;j++)
+                			{
+                				if(children[j].className == "detailScroller")
+                				{
+                					children[j].style.display="block";
+                				}
+                			}
+                		}
+                	}
+                }
+            }
+            function hideInfo(name)
+            {
+                document.getElementById(name).style.display="none";
+                document.getElementById('player').style.display = "block";
+            }
+            function lunch()
+            {
+                window.alert("!!!The stingray ate your Turtle!!!");
+            }
+        </script>
+    </head>
+    <body class="jquery-ripples">
+        <div id="semi">
+            <div id="howToBG">
+                <div id="howTo">
+                    <h1>Matthew Mc Allister</h1>
+                    <h2>Interactive CV</h2>
+                    <span id="avatar"></span>
+                    <p>Welcome to my interactive CV, Inspired by the works by <a href="http://www.rleonardi.com/interactive-resume/">Robby Leonardi</a>, I have designed my own Interactive CV.
+                    You will be playing as a turtle swimming around in the ocean while you are continuosly persued by a manta stingray. Move your mouse to swim. Swimming into a life saver ring will teleport you to the beach, where you can view the relevent information about me<br>
+                    Have Fun</p>
+                    <button id="startGame" onclick="startGame();">Click to Begin</button>
+                </div>
+            </div>
+            <div id="playerMover">
+                <div id="playerRotator">
+                    <div id="player" class="playerOpen"></div>
+                </div>
+            </div>
+            <div id="sharkMover" onmouseover="lunch();">
+                <div id="sharkRotator">
+                    <div id="shark" class="sharkOpen"></div>
+                </div>
+            </div>
+            <div class="lifesaver" onmouseover="displayInfo('basicInfo');" id="ring_basicInfo">
+                <div>Basic<br>Info</div>
+            </div>
+            <div class="lifesaver" onmouseover="displayInfo('skills');" id="ring_skills">
+                <div>Skills</div>
+            </div>
+            <div class="lifesaver" onmouseover="displayInfo('hobbies');" id="ring_hobbies">
+                <div>Hobbies</div>
+            </div>
+            <div class="lifesaver" onmouseover="displayInfo('workExperience');" id="ring_workExperience">
+                <div>Work<br>Experience</div>
+            </div>
+            <div class="lifesaver" onmouseover="displayInfo('education');" id="ring_education">
+                <div>Education</div>
+            </div>
+            <div class="lifesaver" onmouseover="displayInfo('projects');" id="ring_projects">
+                <div>Projects</div>
+            </div>
+            <div class="lifesaver" onmouseover="displayInfo('contactInfo');" id="ring_contactInfo">
+                <div>Contact<br>Info</div>
+            </div>
+            
+            
+            <div class="detail" id="basicInfo">
+                <span class="returnToSea" onmouseover="hideInfo('basicInfo');">Back to Sea</span>
+                <div class="detailContent">
+                    <h1>My Basic Information</h1>
+                    <h2>Me... In a nutshell</h2>
+                    <p>
+                        I am a self taught, software developer who is passionate about development of just about anything that requires scripting.
+                        I enjoy working on both front-end, and backend projects and find joy in achiving goals and solving problems.<br>
+                        I am skilled in the following:
+                    </p>
+                    <ul style="list-style-type:none;">
+                        <li>php: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li>JavaScript: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li>JQuery (& ajax): <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li>HTML: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li>CSS: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li>ino:<span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li>Python: <span style="color:yellow;">&starf;</span></li>
+                    </ul>
+                    <p>
+                        Find out more in my skills Section
+                    </p>
+                </div>
+                <div class="detailScroller"></div>
+            </div>
+            <div class="detail" id="contactInfo">
+                <span class="returnToSea" onmouseover="hideInfo('contactInfo');">Back to Sea</span>
+                <div class="detailContent">
+                    <h1>My Contact Information</h1>
+                    <h2>I would love to hear from you</h2>
+                    <ul class="colList">
+                        <li>Full Name: Matthew Jonathan Mc Allister</li>
+                        <li>ID Number: 9504065035083</li>
+                        <li>email Address: <a target="_blank" href="mailto:matatacmca@gmail.com">matatacmca@gmail.com</a></li>
+                        <li>Mobile Phone: (+27) 071 158 3596</li>
+                        <li>Facebook: <a target="_blank" href="https://facebook.com/bbuusshhiiee">https://facebook.com/bbuusshhiiee</a></li>
+                        <li>Github: <a target="_blank" href="https://github.com/matatacmca">https://github.com/matatacmca</a></li>
+                        <li>Alison.com: <a target="_blank" href="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister">https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister</a></li>
+                    </ul>
+                </div>
+                <div class="detailScroller"></div>
+            </div>
+            <div class="detail" id="skills">
+                <span class="returnToSea" onmouseover="hideInfo('skills');">Back to Sea</span>
+                <div class="detailContent">
+                    <h1>My Skills</h1>
+                    <h2>How I rank the things I can do</h2>
+                    <p>
+                    	Hover over the item to see why I scored it the way I did.
+                    </p>
+                    <ul class="colList">
+                        <li title="I am persistent, I won't give up until I resolve an issue">Problem Solving:<span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="I have used computers since I was four years old, I can do any basic task that is asked of me.">Basic Computer Operation: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="I will avoid seeking employment elsewhere at all costs, except where my financial stability is concerned">Loyalty: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="Give me a task, I'll do it your way">Following Instruction: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="Listening to music helps me block out distraction, if I do this, I could work for hours on end.">Focus (with background music): <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="Structure. Nothing irks me more than untidy code, but I never have an organised desk">OCD: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="It's very challenging for me to communicate an idea verbally. Visual communication is my strength">Communication: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="To a point, I'll perform well under pressure, but after a while I tend to break down. Usually, all I need is a long weekend, and I'm good to go again">Working under pressure: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="I have done a fair aount if IT administration for the past four years, and if I run into a challenge, I Google it.">Administrative Computer Operation: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="ADHD, Need I say more?">Focus (without background music): <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="I have a fairly short fuse, Especially if I'm doing work I don't enjoy">Self-Control: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="I often start a project with no heading, and as I build it, I think of additional features I'd like to use">Planning: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+                        <li title="If I have something on my mind, I cannot stop thinking about it, I'll either work late to solve the problem, or I'll spend the whole night dreaming about the solution">Adequate Sleep: <span style="color:yellow;">&starf;</span></li>
+                    </ul>
+                	<h2>Systems / Languages I've worked with, and how much I like them</h2>
+                    <ul class="colList">
+                        <li>php: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+                        <li>HTML: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+                        <li>CSS: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+                        <li>Apache Web Server: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+                        <li>Apache CouchDB: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+                        <li>ChromeOS: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+                        <li>Ubuntu (or any linux OS): <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+                        <li>JQuery: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
+                        <li>JavaScript: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
+                        <li>Windows OS: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
+                        <li>MySQL: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
+                        <li>ino: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
+                        <li>Python: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
+                        <li>Mac OS: <span style="color:yellow;">&starf;</span></li>
+                    </ul>
+                    <h2>What I'd like to Improve</h2>
+                    <ul style="text-align:left">
+                        <li>My Self-Control. Anger management is a big let down for me</li>
+                        <li>Communication Skills. I would really like to be able to communicate verbally</li>
+                        <li>Focus. I hate how easily I can get distracted. I often find myself going off on a tangent when I'm doing a project</li>
+                        <li>Planning. I need to work on improving my Planning Skills</li>
+                    </ul>
+                    <h2>My Personality (bassed on an assessment at plum.io)</h2>
+                    <a href="https://app.plum.io/profile/f96dea596e6363f2e54e353c8c9c86a0b325391e" target="_blank">View my Profile directly from Plum.IO</a>
+                    <iframe style="width:100%;height:75vh" src="plum.html"></iframe>
+                </div>
+                <div class="detailScroller"></div>
+            </div>
+            <div class="detail" id="hobbies">
+                <span class="returnToSea" onmouseover="hideInfo('hobbies');">Back to Sea</span>
+                <div class="detailContent">
+                    <h1>My Hobbies</h1>
+                    <h2>The things I do in my spare time</h2>
+                    <ul class="colList">
+                        <li>Race Marshalling for KMA</li>
+                        <li>Assistant Troop Scouter at <a target="_blank" href="https://www.google.co.za/maps/place/Jan+Smuts+Scouts+Hall/@-26.1401338,28.1375546,17z/data=!3m1!4b1!4m5!3m4!1s0x1e95125e9c1016d5:0x1f1434a057227d8f!8m2!3d-26.1401386!4d28.1397433?hl=en">Jan Smuts Scout Group</a></li>
+                        <li>Tinkering on all sorts of miscelaneous projects</li>
+                        <li>Action Cricket at <a target="_blank" href="https://www.google.co.za/maps/place/Edenvale+Action+Sports+Arena/@-26.128328,28.1840609,17z/data=!3m1!4b1!4m5!3m4!1s0x1e95139eee63910b:0xe0657c1df89fe3f5!8m2!3d-26.1283328!4d28.1862496?hl=en">Edenvale Action Sports Arena</a></li>
+                    </ul>
+                </div>
+                <div class="detailScroller"></div>
+            </div>
+            <div class="detail" id="workExperience">
+                <span class="returnToSea" onmouseover="hideInfo('workExperience');">Back to Sea</span>
+                <div class="detailContent" syle="text-align:left">
+                    <h1>My Work Experience</h1>
+                    <h2>The jobs I've done, until I found my calling</h2>
+                    <ol style="text-align:left;">
+                        <li>
+                            <strong>January 2018 - Present: Integrated Core Group</strong><br>
+                            <strong>Role: Service Delivery Manager</strong>
+                            <p>
+                                <strong>Responsibilities:</strong>
+                            </p>
+                            <ul>
+                                <li>Designing analytic reports that integrate with the company's Job Management System in order to better plan and guage performance of selected staff groups</li>
+                                <li>Designing operational workflows in order to better streamline the operational process of the company to ensure exceptional service delivery</li>
+                                <li>Work through any service delivery isues and implement a process to prevent issues from recurring in the future</li>
+                                <li>Occasionally performed duties of a <a href="#SnrTechManager">Senior Technical Manager</a></li>
+                                <li>Regularly perfomed duties of an <a href="#ITAdministrator">IT Administrator</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>April 2016 - December 2017: Integrated Core Group</strong><br>
+                            <strong id="SnrTechManager">Role: Senior Technical Manager</strong>
+                            <p>
+                                <strong>Responsibilities:</strong>
+                            </p>
+                            <ul>
+                                <li>Installation, Maintenance and Repairs of Generators, UPS's, Sprinkler Pumps, Alarm Systems and other related equipment</li>
+                                <li>Installed GSM Monitoring Units on select sites for cold rooms, portable chest freezers, and generators</li>
+                                <li>Configured an off-site alarm monitoring control room for a client</li>
+                                <li>Designed two Customised Reports for a client that integrates with their Job Management System</li>
+                                <li>Regularly perfomed duties of an <a href="#ITAdministrator">IT Administrator</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>April 2015 - March 2016: Integrated Core Group</strong><br>
+                            <strong id="ITAdministrator">Dual Role: Technical Manager & IT Administrator</strong>
+                            <p>
+                                <strong>Responsibilities:</strong>
+                            </p>
+                            <ul>
+                                <li>Configuration of company IT infrustructure including Networking, Printers, Server Configuration, etc</li>
+                                <li>Configuration of LAMP server</li>
+                                <li>Routine Maintenence of web server (WordPress)</li>
+                                <li>Implemented & Trained two simPRO (Job Management System) builds for clients</li>
+                                <li>Implemented & Trained simPRO (Job Management System) for internal Staff</li>
+                                <li>Implemented $ Trained Gsuite for internal Staff</li>
+                                <li>Low Level integration of helpdesk to Job Management System (simPRO)</li>
+                                <li>Developed a Call Centre Dashboard that links with the Job Management System (simPRO)</li>
+                                <li>Installation, Maintenance and Repairs of Generators, UPS's, Sprinkler Pumps, Alarm Systems and other related equipment</li>
+                                <li>Installed GSM Monitoring Units on select sites for cold rooms, portable chest freezers, and generators</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>June 2014 - March 2015: Robertson Ventilation Industries</strong><br>
+                            <strong>Role: Due Diligence Technician</strong>
+                            <p>
+                                <strong>Responsibilities:</strong>
+                            </p>
+                            <ul>
+                                <li>Conduct site surveys on newly sold maintenance contracts and ensure that all relevent equipment wass added to the asset register on the Job Management system</li>
+                                <li>Assisted in an IT infrustructure upgrade from Desktop to Terminal Services which subsequently involved me in IT support</li>
+                                <li>Routine Maintenence of web server (WordPress)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>December 2013 - May 2014: Outdoor Warehouse, Modderfontein</strong><br>
+                            <strong>Role: Permanent Sales Assistant</strong>
+                            <p>
+                                <strong>Responsibilities:</strong>
+                            </p>
+                            <ul>
+                                <li>Conduct departmental stock couns on a daily basis</li>
+                                <li>Assist customers in store and attemp to up-sell their purchases</li>
+                                <li>Participate in bi-annual stock takes</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="detailScroller"></div>
+            </div>
+            <div class="detail" id="education">
+                <span class="returnToSea" onmouseover="hideInfo('education');">Back to Sea</span>
+                <div class="detailContent" syle="text-align:left">
+                    <h1>My Education</h1>
+                    <h2>They don't teach you this stuff in school</h2>
+                    <p style="text-align:left">
+                        <strong>Highest Education Level</strong><br>
+                        <strong>National Senior Certificate (Matric)</strong><br>
+                        Results:
+                    </p>
+                    <ul class="colList">
+                        <li>English Home Language: 61%</li>
+                        <li>Afrikaans First Additional Language: 65%</li>
+                        <li>Mathematics: 65% </li>
+                        <li>Life Orientation: 53%</li>
+                        <li>Computer Applications Technology: 67%</li>
+                        <li>Life Sciences: 51%</li>
+                        <li>Physical Sciences: 66%</li>
+                    </ul>
+                    <p style="text-align:left">
+                        <strong>Additional Qualifications</strong><br>
+                    </p>
+                    <a href="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister" target="_blank">Alison.com:</a><br>
+                    <iframe style="margin:0 auto;width:90%;height:75vh;" src="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister"></iframe>
+                </div>
+                <div class="detailScroller"></div>
+            </div>
+            <div class="detail" id="projects">
+                <span class="returnToSea" onmouseover="hideInfo('projects');">Back to Sea</span>
+                <div class="detailContent" syle="text-align:left">
+                    <h1>My Projects</h1>
+                    <h2>A collection of things I have done</h2>
+                    <p style="text-align:left">
+                        <strong>Projects from My Career</strong><br>
+                        I cannot provide screenshots or source code of these projects as this will violate company policies, however, here is a list of what I have done.<br>
+                        (Hover over each Item for more detail)
+                        <ol style="text-align:left">
+                            <li>Integrated Core Group
+                                <ol>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report reads how many calls had been logged in the past week, how many have been completed, and how many have not been actioned. It also displays the total number of jobs in the system that are incomplete, as wll as a 5 day Schedule display, to show what work has been scheduled">2015: Call Centre Dashboard (PHP,JS,HTML,CSS)</li>
+                                    <li title="A customised report developed for Geze South Africa that reads data from their Job Management System (simPRO) via an API. This report is emailed daily to the client and is archived on our servers">2016: Work In Progress Report (CRONTAB,PHP,JS,HTML,CSS)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to ensure Account Managers are completing work in progress for a specific customer. It is emailed weekly to the Account Manager and is archived on our servers">2016: Key Accounts Report (CRONTAB,PHP,JS,HTML,CSS)</li>
+                                    <li title="A customised report developed for Geze South Africa that reads data from their Job Management System (simPRO) via an API. This report is emailed monthly to the client and is archived on our servers. The report compares data from the technicians in order for the client to determin how productive their field staff are">2017: Technician Hours Report (CRONTAB,PHP,JS,HTML,CSS,Google Charts API)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to ensure that Resource Co-Ordinaters are achieving a certain invoicing target each month. It is emailed daily to the Resource Co-Ordinaters and is archived on our servers">2017: Daily Job target Report  (CRONTAB,PHP,JS,HTML,CSS,Google Charts API)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on what work is in progress for a specified date. This report has a form handler and is manually executed">2018: Customised Runsheet (PHP,JS,HTML,CSS)</li>
+                                    <li title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on which projects have the highest expected profitibility. Building this report allowed us to find a bug within simPRO that was not calculating estimated costs correctly. This report has a form handler and is manually executed">2018: Job Profitability Report (PHP,JS,HTML,CSS)</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    <p style="text-align:left">
+                        <strong>Projects Completed in my capacity</strong>
+                    </p>
+                    <ol style="text-align:left">
+                        <li>
+                            <a target="_blank" href="https://github.com/matatacmca">Github</a><br>
+                            Why continuously update dynamic content? jQuery (ajax) & github API is used to update the below repositories
+                            <div id="githubRepos">
+                            </div>
+                                <script>
+$.ajax({
+    url: 'https://api.github.com/users/matatacmca/repos',
+    success: function(msg){
+        var result = "<ol>";
+        var i;
+        for(i = 0; i < msg.length; i++)
+        {
+            result = result + "<li title=\"" + msg[i]['description'] + "\">" + msg[i]['created_at'].substring(0,4) + ": <a target=\"_blank\" href=\"" +msg[i]['html_url'] + "\">"+ msg[i]['name'] + "</a></li>";
+        }
+        result = result + "</ol>";
+        $('#githubRepos').html(result);
+    }
+});
+                                </script>
+                        </li>
+                    </ol>
+                </div>
+                <div class="detailScroller"></div>
+            </div>
+            <!--BUBBLES--><div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+                <div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div><div class="bubbles"></div>
+            </div>
+            <!--FISH--><div>
+                <div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div>
+                <div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div><div class="mover"><div class="rotator"><div class="jellyfish"></div></div></div>
+                
+            </div>
+        </div>
+    <script>
+    moveBubbles();
+    moveJellyfish();
+function startGame(){
+    document.getElementById('howToBG').style.display ="none";
+    init();
+};
+    
+function init() {
+	if (window.Event) {
+	document.captureEvents(Event.MOUSEMOVE);
+	}
+	document.onmousemove = getCursorXY;
+}
+
+function getCursorXY(e) {
+    setTimeout(function(){document.getElementById('howTo').style.display = "none";},2000);
+    var player = document.getElementById('playerMover');
+    var halfheight = ($('#playerMover').height())/2;
+    var halfwidth = ($('#playerMover').width()) / 2;
+    var mouseX = ((window.Event) ? e.pageX : event.clientX);
+	var mouseY = ((window.Event) ? e.pageY : event.clientY);
+	var turtleX = $('#playerMover').position().left + halfwidth;
+	var turtleY = $('#playerMover').position().top + halfheight;
+	var deltaY = mouseY - turtleY;
+	var deltaX = mouseX - turtleX;
+	var radians = Math.atan2(deltaX,deltaY);
+    var degree = (radians * (180 / Math.PI) * -1) + 90;
+    document.getElementById('playerRotator').style.transform = "rotate(" + degree + "deg)";
+	player.style.left = (((window.Event) ? e.pageX : event.clientX) - halfwidth) +'px';
+	player.style.top = (((window.Event) ? e.pageY : event.clientY) - halfheight) +'px';
+	var shark = document.getElementById('sharkMover');
+    var halfheight = ($('#sharkMover').height())/2;
+    var halfwidth = ($('#sharkMover').width()) / 2;
+    var sharkX = $('#sharkMover').position().left + halfwidth;
+    var sharkY = $('#sharkMover').position().top + halfheight;
+    var deltaY = mouseY - sharkY;
+    var deltaX = mouseX - sharkX;
+    var radians = Math.atan2(deltaX,deltaY);
+    var degree = (radians * (180 / Math.PI) * -1) + 90;
+    document.getElementById('sharkRotator').style.transform = "rotate(" + degree + "deg)";
+    shark.style.left = (((window.Event) ? e.pageX : event.clientX) - halfwidth) +'px';
+    shark.style.top = (((window.Event) ? e.pageY : event.clientY) - halfheight) +'px';
+    $('body').ripples({dropRadius:10,perturbance:0.005,imageURL:"coralReef.jpg",resolution:450});
+};
+setInterval(function(){
+    var player = document.getElementById('player');
+    if(player.className == 'playerOpen')
+    {
+        player.className = 'playerClosed';
+    }
+    else
+    {
+        player.className = 'playerOpen';
+    }
+    var shark = document.getElementById('shark');
+    if(shark.className == 'sharkOpen')
+    {
+        shark.className = 'sharkClosed';
+    }
+    else
+    {
+        shark.className = 'sharkOpen';
+    }
+},250);
+setInterval(function(){moveBubbles();},4000);
+setInterval(function(){moveJellyfish();},2000);
+function moveBubbles(){
+    var bubbles = document.getElementsByClassName("bubbles");
+    var i;
+    var bubbleX = $('.bubbles').width();
+    var bubbleY = $('.bubbles').height();
+    var maxX = $('body').width() - bubbleX;
+    var maxY = $('body').height() - bubbleY;
+    for(i = 0; i < (bubbles.length); i++)
+    {
+        bubbles[i].style.top = (Math.floor(Math.random() * maxY) + 0) + "px";
+        bubbles[i].style.left = (Math.floor(Math.random() * maxX) + 0) + "px";
+        bubbles[i].style.display = "block";
+    }
+}
+function moveJellyfish(){
+    var jellyfish = document.getElementsByClassName("jellyfish");
+    var i;
+    var jellyfishX = $('.jellyfish').parent().parent().width();
+    var jellyfishY = $('.jellyfish').parent().parent().height();
+    var halfheight = ($('.jellyfish').parent().parent().height())/2;
+    var halfwidth = ($('.jellyfish').parent().parent().width()) / 2;
+    var maxX = $('body').width() - jellyfishX;
+    var maxY = $('body').height() - jellyfishY;
+    for(i = 0; i < (jellyfish.length); i++)
+    {
+        var currentX = $('.jellyfish').parent(i).parent(i).position(i).left;
+	    var currentY = $('.jellyfish').parent(i).parent(i).position(i).top;
+        var randX = (Math.floor(Math.random() * maxY) + 0);
+        var randY = (Math.floor(Math.random() * maxX) + 0);
+        var deltaX = (randX - currentX);
+        var deltaY = (randY - currentY);
+        var radians = Math.atan2(deltaX,deltaY);
+        var degree = (radians * (180 / Math.PI) * -1) + 90;
+        jellyfish[i].parentElement.style.transform = "rotate(" + (degree) + "deg)";
+        jellyfish[i].parentElement.parentElement.style.top = randX + "px";
+        jellyfish[i].parentElement.parentElement.style.left = randY  + "px";
+        jellyfish[i].parentElement.parentElement.style.display = "block";
+    }
+}
+        </script>
+    </body>
+</html>
