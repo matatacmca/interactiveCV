@@ -358,6 +358,14 @@
 	                            <div id="githubRepos">
 	                            </div>
 	                                <script>
+function getLanguages(repo) {
+	$.ajax({
+		url:'https://api.github.com/repos/matatacmca/' + repo + '/languages',
+		sucess:function(msg){
+			return(msg);
+		}
+	});
+}
 	$.ajax({
 	    url: 'https://api.github.com/users/matatacmca/repos',
 	    success: function(msg){
@@ -365,7 +373,11 @@
 	        var i;
 	        for(i = 0; i < msg.length; i++)
 	        {
-	            result = result + "<li title=\"" + msg[i]['description'] + "\">" + msg[i]['created_at'].substring(0,4) + ": <a target=\"_blank\" href=\"" +msg[i]['html_url'] + "\">"+ msg[i]['name'] + "</a></li>";
+	            result = result + "<li title=\"" + msg[i]['description'] + "\">" + msg[i]['created_at'].substring(0,4) + ": <a target=\"_blank\" href=\"" +msg[i]['html_url'] + "\">"+ msg[i]['name'] + "</a>";
+	            result = result + "<ul>"
+	            //result = result + getLanguages(msg[i]['name'])
+	            window.alert(getLanguages(msg[i]['name']));
+	            result = result +"</ul></li>";
 	        }
 	        result = result + "</ol>";
 	        $('#githubRepos').html(result);
