@@ -13,6 +13,7 @@
                 var parent = document.getElementById(name);
                 parent.style.display="block";
                 document.getElementById('player').style.display = "none";
+                document.getElementById('shark').style.display = "none";
                 var children = parent.children;
                 for(i=0;i<children.length;i++)
                 {
@@ -35,6 +36,8 @@
             {
                 document.getElementById(name).style.display="none";
                 document.getElementById('player').style.display = "block";
+                document.getElementById('shark').style.display = "block";
+                document.getElementById('shark').style.top = "";
             }
             function lunch()
             {
@@ -412,9 +415,9 @@ function doWork(data)
 	                    <div id="player" class="playerOpen"></div>
 	                </div>
 	            </div>
-	            <div id="sharkMover" onmouseover="lunch();">
+	            <div id="sharkMover">
 	                <div id="sharkRotator">
-	                    <div id="shark" class="sharkOpen"></div>
+	                    <div id="shark"  onmouseover="lunch();" class="sharkOpen"></div>
 	                </div>
 	            </div>
 	            <div id="lifesaverContainer">
