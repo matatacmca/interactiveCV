@@ -174,3 +174,7 @@ ul
 	
 	
 }
+#snackbarContainer
+{
+	display:none;
+}
