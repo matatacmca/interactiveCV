@@ -107,7 +107,7 @@ ul
 .detail
 {
 	display:block;
-	position:initial;
+	position:relative;
 }
 #mobileAvatar
 {
