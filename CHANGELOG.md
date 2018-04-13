@@ -1,3 +1,4 @@
+# 13 April fixed bug on zooming of background image
 # 12 April 2018
 Added Title to Interactive CV, Resolving issue nr.3
 # 10 April 2018

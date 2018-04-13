@@ -36,6 +36,7 @@ body
     padding:0;
     margin: 0 auto;
     background: url('coralReef.jpg') no-repeat center;
+    background-size:cover;
     background-color: #0077be;
     cursor:none;
 }
@@ -407,7 +408,8 @@ li
 	z-index: 30; /* Add a z-index if needed */
 	bottom: 30px; /* 30px from the bottom */
 }
-#snackbar {
+#snackbar
+{
 	padding-top:10px;
 	padding-bottom:10px;
     display:block; /* Hidden by default. Visible on click */
