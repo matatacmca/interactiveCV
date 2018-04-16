@@ -28,27 +28,27 @@ h1
 }
 h2
 {
-    font-family: 'Neucha', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 p
 {
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 li
 {
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 #body
 {
     padding:0;
     margin: 0 auto;
     cursor:auto;
-    background-image:none;
+    background:none;
     min-width:100%;
     max-width:100%;
     width:100%;
     height:auto;
-    background-color: #0077be;
+    background-color: white;
     background-size:0;
 
 }
@@ -57,12 +57,12 @@ body
     padding:0;
     margin: 0 auto;
     cursor:auto;
-    background-image:none;
+    background:none;
     min-width:100%;
     max-width:100%;
     width:100%;
     height:auto;
-    background-color: #0077be;
+    background-color: white;
     background-size:0;
 
 }
@@ -147,6 +147,7 @@ ul
 	height:auto;
 	max-height:none;
 	overflow-x:initial;
+	padding:1%;
 }
 .noPrint
 {
@@ -171,10 +172,12 @@ ul
 	padding:0;
 	margin: 0 auto;
 	width:101%;
-	
-	
 }
 #snackbarContainer
+{
+	display:none;
+}
+#printCaption
 {
 	display:none;
 }

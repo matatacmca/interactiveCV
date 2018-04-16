@@ -1,6 +1,8 @@
 # 16 April
-- Removed Cursive fonts to create a moreprofessional feel
+- Removed Cursive fonts to create a more professional feel
 - Removed assets from mobile view
+- Fixxed Grammar Issues
+- added subtitle urging users to view on desktop
 # 13 April
 fixed bug on zooming of background image
 # 12 April 2018
