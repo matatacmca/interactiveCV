@@ -93,7 +93,7 @@ body
 #startGame
 {
     width:50%;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Roboto', sans-serif;
     border-radius:100px;
     cursor:pointer;
 	-webkit-transition-duration:2s;
@@ -151,15 +151,15 @@ h1
 }
 h2
 {
-    font-family: 'Neucha', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 p
 {
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 li
 {
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Roboto', sans-serif;
     
 }
 .colList
@@ -187,7 +187,7 @@ li
 }
 .lifesaver div
 {
-    font-family: 'Neucha', cursive;
+    font-family: 'Roboto', sans-serif;
     display: table-cell;
     text-align: center;
     vertical-align:middle;
@@ -422,6 +422,10 @@ li
     border-radius: 2px; /* Rounded borders */
 }
 @media only screen and (max-width: 600px){
+	#assets
+	{
+		display:none;
+	}
     body
     {
 	    min-height:100vh;
