@@ -1,3 +1,5 @@
+# 19 April
+- Ajusted mobile viewing to screens 500 px long
 # 16 April
 - Removed Cursive fonts to create a more professional feel
 - Removed assets from mobile view
