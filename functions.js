@@ -44,10 +44,11 @@ function init() {
 	document.captureEvents(Event.MOUSEMOVE);
 	}
 	document.onmousemove = getCursorXY;
+	document.click = getCursorXY;
 }
 
 function getCursorXY(e) {
-	if($(window).innerWidth() >= 600)
+	if($(window).innerWidth() >= 500)
 	{
 	    var player = document.getElementById('playerMover');
 	    var halfheight = ($('#playerMover').height())/2;
