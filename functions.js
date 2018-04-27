@@ -24,7 +24,7 @@ function displayInfo(name)
 }
 function hideInfo(name)
 {
-    document.getElementById(name).style.display="none";
+    document.getElementById(name).removeAttribute("style");
     document.getElementById('player').style.display = "block";
     document.getElementById('shark').style.display = "block";
     document.getElementById('shark').style.top = "";
@@ -147,6 +147,4 @@ function snackbar(detail,timeout){
 		container.style.display = "none";
 	}
 	snackbar.innerText = detail;
-	
-	
 }

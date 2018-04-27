@@ -1,3 +1,5 @@
+# 27 April
+- Fixed Print isue in CV were if elements were explored, they are no longer available for printing
 # 23 April
 - Fixed Mobile bug by adding onclick event listener
 # 19 April
