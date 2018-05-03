@@ -1,3 +1,5 @@
+# 3 May 2018
+- Added a new Project to my Career Projects Section
 # 27 April
 - Fixed Print isue in CV were if elements were explored, they are no longer available for printing
 # 23 April
