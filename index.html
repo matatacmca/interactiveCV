@@ -184,7 +184,26 @@
 						<h2>The jobs I've done, until I found my calling</h2>
 						<ol style="text-align:left;">
 							<li>
-								<strong>January 2018 - Present: Integrated Core Group</strong><br>
+								<strong>Mid May 2018 - Present: Integrated Core Group</strong><br>
+								<strong>Role: Software Engineer</strong>
+								<p>
+									<strong>Responsibilities:</strong>
+								</p>
+								<ul>
+									<li>Design, develop and implement an alarm monitoring system and build continuaous upgrades and features as per clients requirements. Click <a href="javascript:" onclick="displayCoreMonitor();">here</a> for more information</li>
+								</ul>
+								<script>
+									function displayCoreMonitor()
+									{
+										hideInfo('workExperience');
+										displayInfo('projects');
+										window.location.hash='COREmonitor';
+										window.location.hash='';
+									}
+								</script>
+							</li>
+							<li>
+								<strong>January 2018 - Mid May 2018: Integrated Core Group</strong><br>
 								<strong>Role: Service Delivery Manager</strong>
 								<p>
 									<strong>Responsibilities:</strong>
@@ -321,6 +340,9 @@
 										<li onclick="snackbar($(this)[0].title,15000);" title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on what work is in progress for a specified date. This report has a form handler and is manually executed">2018: Customised Runsheet (PHP, JS, HTML, CSS)</li>
 										<li onclick="snackbar($(this)[0].title,15000);" title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on which projects have the highest expected profitibility. Building this report allowed us to find a bug within simPRO that was not calculating estimated costs correctly. This report has a form handler and is manually executed">2018: Job Profitability Report (PHP, JS, HTML, CSS)</li>
 										<li onclick="snackbar($(this)[0].title,15000);" title="A customised report developed for Integrated Core Group that test for online devices via ICMP for an IP-based Security Control center">2018: Control Room Dashboard (PHP, JS, HTML, CSS, AJAX)</li>
+										<li id="COREmonitor" onclick="snackbar($(this)[0].title,15000);" title="An alarm monitoring system designed as per client specifications in  order to monitor 120+ retail stores nation wide with new features added monthly as per client requirements">
+											2018: COREmonitor(PHP, JS, HTML, CSS, JQUERY, BOOSTRAP, AJAX)
+										</li>
 									</ol>
 								</li>
 							</ol>
