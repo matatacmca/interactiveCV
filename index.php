@@ -8,6 +8,7 @@
 		<link href="googleFonts.css" rel="stylesheet">
 		<link href="mainStyle.css" media="screen" rel="stylesheet">
 		<link href="print.css" media="print" rel="stylesheet">
+		<!--<link href="print.css" rel="stylesheet">-->
 		<link rel="icon" href="Turtle Open.png" type="image/png">
 		<title>Interactive CV || Matthew Mc Allister</title>
 	</head>
@@ -19,7 +20,7 @@
 						<h1>Matthew Mc Allister</h1>
 						<h2>Interactive CV</h2>
 						<span class="avatar"></span>
-						<p>Welcome to my interactive CV, Inspired by the works of <a href="http://www.rleonardi.com/interactive-resume/">Robby Leonardi</a>, I have designed my own Interactive CV.
+						<p>Welcome to my interactive CV, Inspired by the works of <a target="_blank" href="http://www.rleonardi.com/interactive-resume/">Robby Leonardi</a>, I have designed my own Interactive CV.
 						You will be playing as a turtle swimming around in the ocean while you are continuosly persued by a manta stingray. Move your mouse or click on the screen to swim. Swimming into a life saver ring will teleport you to the beach, where you can view the relevant information about me<br></p>
 						<p>Click on the print icon at any time, to view the print friendly version </p>
 						<p>Have Fun</p>
@@ -36,7 +37,7 @@
 				<div id="printTitle">
 					<h1>Interactive CV<br>(print version)</h1>
 					<h2>Matthew Mc Allister</h2>
-					<p>Please visit <a href="http://traffickids.co.za/github/interactiveCV">http://traffickids.co.za/github/interactiveCV</a> on a computer for the full experience</p>
+					<p>Please visit <a target="_blank" href="https://web.traffickids.co.za/github/interactiveCV">https://web.traffickids.co.za/github/interactiveCV</a> on a computer for the full experience</p>
 				</div>
 				<div onclick="window.print();">
 					<div class="printer"></div>
@@ -49,17 +50,20 @@
 						<h2>Me... In a nutshell</h2>
 						<p>
 							I am a self-taught, software developer who is passionate about the development of just about anything that requires scripting.
+							I am passionate about maximising profitability by improving productivity through software.
 							I enjoy working on both front-end, and backend projects and find joy in achieving goals and solving problems.<br>
+							
 							I am skilled in the following:
 						</p>
 						<ul style="list-style-type:none;">
-							<li>PHP: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
-							<li>JavaScript: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
-							<li>JQuery (& ajax): <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
-							<li>HTML: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
-							<li>CSS: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
-							<li>ino:<span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
-							<li>Python: <span style="color:yellow;">&starf;</span></li>
+							<li>PHP: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+							<li>JavaScript: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
+							<li>JQuery (& ajax): <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
+							<li>Delphi / Turbo Pascal: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
+							<li>HTML: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></span></li>
+							<li>CSS: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
+							<li>ino: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
+							<li>Python: <span style="color:yellow;">&starf;&starf;</span></li>
 						</ul>
 						<p>
 							Find out more in my skills Section
@@ -100,7 +104,7 @@
 							<li onclick="snackbar($(this)[0].title,10000);" title="Structure. Nothing irks me more than untidy code, but I never have an organised desk">OCD: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
 							<li onclick="snackbar($(this)[0].title,10000);" title="It's very challenging for me to communicate an idea verbally. Visual communication is my strength">Communication: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
 							<li onclick="snackbar($(this)[0].title,10000);" title="To a point, I'll perform well under pressure, but after a while I tend to break down. Usually, all I need is a long weekend, and I'm good to go again">Working under pressure: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
-							<li onclick="snackbar($(this)[0].title,10000);" title="I have done a fair aount if IT administration for the past four years, and if I run into a challenge, I Google it.">Administrative Computer Operation: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
+							<li onclick="snackbar($(this)[0].title,10000);" title="I have done a fair aount if IT administration during my employment at ICG and RVI, and if I run into a challenge, I Google it.">Administrative Computer Operation: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
 							<li onclick="snackbar($(this)[0].title,10000);" title="ADHD, Need I say more?">Focus (without background music): <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
 							<li onclick="snackbar($(this)[0].title,10000);" title="I have a fairly short fuse, Especially if I'm doing work I don't enjoy">Self-Control: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
 							<li onclick="snackbar($(this)[0].title,10000);" title="I often start a project with no heading, and as I build it, I think of additional features I'd like to use">Planning: <span style="color:yellow;">&starf;</span><span style="color:yellow;">&starf;</span></li>
@@ -109,23 +113,24 @@
 						<h2>Systems / Languages I've worked with, and how much I like them</h2>
 						<ul class="colList">
 							<li>php: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+							<li>Delphi / Turbo Pascal: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
 							<li>HTML: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
 							<li>CSS: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
 							<li>Apache Web Server: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
-							<li>Apache CouchDB: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+							<li>Apache CouchDB: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
 							<li>Chrome OS: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
 							<li>Ubuntu (or any linux OS): <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
-							<li>JQuery: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
-							<li>JavaScript: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
+							<li>JQuery: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
+							<li>JavaScript: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
 							<li>Windows OS: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
-							<li>MySQL: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
+							<li>MySQL: <span style="color:yellow;">&starf;&starf;&starf;&starf;&starf;</span></li>
 							<li>ino: <span style="color:yellow;">&starf;&starf;&starf;&starf;</span></li>
 							<li>Python: <span style="color:yellow;">&starf;&starf;&starf;</span></li>
 							<li>Mac OS: <span style="color:yellow;">&starf;</span></li>
 						</ul>
 						<div class="iframedContent">
 							<h2>My Personality (based on an assessment at plum.io)</h2>
-							<a href="https://app.plum.io/profile/f96dea596e6363f2e54e353c8c9c86a0b325391e" target="_blank">View my Profile directly from Plum.IO</a>
+							<!--<a href="https://app.plum.io/profile/f96dea596e6363f2e54e353c8c9c86a0b325391e" target="_blank">View my Profile directly from Plum.IO</a>-->
 							<iframe style="width:100%;height:75vh" src="plum.html"></iframe>
 						</div>
 						<div class="iframedReplacer">
@@ -169,10 +174,10 @@
 						<h1>My Hobbies</h1>
 						<h2>The things I do in my spare time</h2>
 						<ul class="colList">
-							<li>Race Marshalling for KMA</li>
+							<li>Race Marshalling for <a target="_balnk" href="http://www.kma.org.za/">Kyalami Marshals Association</a></li>
 							<li>Assistant Troop Scouter at <a target="_blank" href="https://www.google.co.za/maps/place/Jan+Smuts+Scouts+Hall/@-26.1401338,28.1375546,17z/data=!3m1!4b1!4m5!3m4!1s0x1e95125e9c1016d5:0x1f1434a057227d8f!8m2!3d-26.1401386!4d28.1397433?hl=en">Jan Smuts Scout Group</a></li>
 							<li>Tinkering on all sorts of miscellaneous projects</li>
-							<li>Action Cricket at <a target="_blank" href="https://www.google.co.za/maps/place/Edenvale+Action+Sports+Arena/@-26.128328,28.1840609,17z/data=!3m1!4b1!4m5!3m4!1s0x1e95139eee63910b:0xe0657c1df89fe3f5!8m2!3d-26.1283328!4d28.1862496?hl=en">Edenvale Action Sports Arena</a></li>
+							<li>Motovlogging for <a target="_blank" href="https://www.youtube.com/channel/UCTwuKaN0axk7Ah6cK7aqoPQ">CasualRiders</a></li>
 						</ul>
 					</div>
 					<div class="detailScroller"></div>
@@ -184,13 +189,60 @@
 						<h2>The jobs I've done, until I found my calling</h2>
 						<ol style="text-align:left;">
 							<li>
-								<strong>Mid May 2018 - Present: Integrated Core Group</strong><br>
+								<strong>October 2019 - Present: IQ Retail</strong><br>
+								<strong>Role: Junior Software Developer</strong>
+								<p>
+									<strong>Responsibilities:</strong>
+								</p>
+								<ul>
+									<li>Fix known issues within the IQ Enterprise software package</li>
+									<li>Develop customised reports for clients using the Fast Reports report writer</li>
+									<li>Implement new features into the IQ Enterprise software package as required by clients needs</li>
+								</ul>
+								<p>
+									<strong>References:</strong>
+								</p>
+								<ul>
+									<li><strong>Neels Rabe</strong> - Software Development Manager (083 730 5470)</li>
+								</ul>
+								<p></p>
+							</li>
+							<li>
+								<strong>February 2019 - September 2019: Secure Banking Technologies</strong><br>
+								<strong>Role: Head Software Developer for Research and Development</strong>
+								<p>
+									<strong>Responsibilities:</strong>
+								</p>
+								<ul>
+									<li>
+										Design, develop and implement a production and field management system consisting of the following
+										<ul>
+											<li>Database Backend</li>
+											<li>Web-Based User Interface</li>
+											<li>Android Based Mobile Application</li>
+										</ul>
+									</li>
+									<li>
+										Write software for electronic security systems using micro-controllers and other hardware peripherals
+									</li>
+								</ul>
+								<p>
+									<strong>References:</strong>
+								</p>
+								<ul>
+									<li><strong>Kevin Whelan</strong> - Product Engineer (076 115 5171)</li>
+									<li><strong>Bradley Whelan</strong> - Product Engineer (076 629 2094)</li>
+								</ul>
+								<p></p>
+							</li>
+							<li>
+								<strong>Mid May 2018 - January 2019: Integrated Core Group</strong><br>
 								<strong>Role: Software Engineer</strong>
 								<p>
 									<strong>Responsibilities:</strong>
 								</p>
 								<ul>
-									<li>Design, develop and implement an alarm monitoring system and build continuaous upgrades and features as per clients requirements. Click <a href="javascript:" onclick="displayCoreMonitor();">here</a> for more information</li>
+									<li>Design, develop and implement an alarm monitoring system and build continuous upgrades and features as per clients requirements. <span class="noPrint">Click <a href="javascript:" onclick="displayCoreMonitor();">here</a> for more information</span></li>
 								</ul>
 								<script>
 									function displayCoreMonitor()
@@ -201,6 +253,14 @@
 										window.location.hash='';
 									}
 								</script>
+								<p>
+									<strong>References:</strong>
+								</p>
+								<ul>
+									<li><strong>Kiran Ramharakh</strong> - Financial Director (079 622 8911)</li>
+									<li><strong>Brendon Whelan</strong> - Managing Director (073 345 5442)</li>
+								</ul>
+								<p></p>
 							</li>
 							<li>
 								<strong>January 2018 - Mid May 2018: Integrated Core Group</strong><br>
@@ -215,6 +275,14 @@
 									<li>Occasionally performed duties of a <a href="#SnrTechManager">Senior Technical Manager</a></li>
 									<li>Regularly performed duties of an <a href="#ITAdministrator">IT Administrator</a></li>
 								</ul>
+								<p>
+									<strong>References:</strong>
+								</p>
+								<ul>
+									<li><strong>Kiran Ramharakh</strong> - Financial Director (079 622 8911)</li>
+									<li><strong>Brendon Whelan</strong> - Managing Director (073 345 5442)</li>
+								</ul>
+								<p></p>
 							</li>
 							<li>
 								<strong>April 2016 - December 2017: Integrated Core Group</strong><br>
@@ -229,6 +297,14 @@
 									<li>Designed two Customised Reports for a client that integrates with their Job Management System</li>
 									<li>Regularly performed duties of an <a href="#ITAdministrator">IT Administrator</a></li>
 								</ul>
+								<p>
+									<strong>References:</strong>
+								</p>
+								<ul>
+									<li><strong>Kiran Ramharakh</strong> - Financial Director (079 622 8911)</li>
+									<li><strong>Brendon Whelan</strong> - Managing Director (073 345 5442)</li>
+								</ul>
+								<p></p>
 							</li>
 							<li>
 								<strong>April 2015 - March 2016: Integrated Core Group</strong><br>
@@ -248,6 +324,14 @@
 									<li>Installation, Maintenance and Repairs of Generators, UPS's, Sprinkler Pumps, Alarm Systems and other related equipment</li>
 									<li>Installed GSM Monitoring Units on select sites for cold rooms, portable chest freezers, and generators</li>
 								</ul>
+								<p>
+									<strong>References:</strong>
+								</p>
+								<ul>
+									<li><strong>Kiran Ramharakh</strong> - Financial Director (079 622 8911)</li>
+									<li><strong>Brendon Whelan</strong> - Managing Director (073 345 5442)</li>
+								</ul>
+								<p></p>
 							</li>
 							<li>
 								<strong>June 2014 - March 2015: Robertson Ventilation Industries</strong><br>
@@ -259,6 +343,13 @@
 									<li>Conduct site surveys on newly sold maintenance contracts and ensure that all relevant equipment was added to the asset register on the Job Management system</li>
 									<li>Assisted in an IT infrastructure upgrade from Desktop to Terminal Services which subsequently involved me in IT support</li>
 								</ul>
+								<p>
+									<strong>References:</strong>
+								</p>
+								<ul>
+									<li><strong>Brendon Whelan</strong> - Maintenence Sales Manager (073 345 5442)</li>
+								</ul>
+								<p></p>
 							</li>
 							<li>
 								<strong>December 2013 - May 2014: Outdoor Warehouse, Modderfontein</strong><br>
@@ -298,14 +389,10 @@
 						<p style="text-align:left">
 							<strong>Additional Qualifications</strong><br>
 						</p>
-						<div class="iframedContent">
-							<a href="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister" target="_blank">Alison.com:</a><br>
-							<iframe style="margin:0 auto;width:90%;height:75vh;" src="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister"></iframe>
-						</div>
-						<div class="iframedReplacer">
-							<h2>Alison.com</h2>
+						<div>
+							<h2><a href="https://alison.com/profile/public/10266557/Matthew%20Mc%20Allister" target="_blank">Alison.com:</a></h2>
 							<p>I have completed the following</p>
-							<ul>
+							<ul class="colList">
 								<li>Fundamentals of Network Security</li>
 								<li>Digital Communication Networks</li>
 								<li>Understanding Cryptography and Its Role in Digital Communications</li>
@@ -328,8 +415,15 @@
 						<p style="text-align:left">
 							<strong>Projects from My Career</strong><br>
 							I cannot provide screenshots or source code of these projects as this will violate company policies, however, here is a list of what I have done.<br>
-							(Hover or click each Item for more detail)
+							<span class="noPrint">(Hover or click each Item for more detail)</span>
 							<ol style="text-align:left">
+								<li>
+									Secure Banking Technologies
+									<ol>
+										<li onclick="snackbar($(this)[0].title,15000);" title="Software run on a micro-controller to stain cash with ink during an ATM attack">2019: An Ink-Stain Security System with online Reporting (PHP, JS, PYTHON, HTML, CSS, SQL, BOOTSTRAP)</li>
+										<li onclick="snackbar($(this)[0].title,15000);" title="A platform designed to keep track of expiry dates of cerrain products">2019: product expiration platform using QR codes (PHP, JS, PYTHON, HTML, CSS, SQL, BOOTSTRAP)</li>
+									</ol>
+								</li>
 								<li>Integrated Core Group
 									<ol>
 										<li onclick="snackbar($(this)[0].title,15000);" title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report reads how many calls had been logged in the past week, how many have been completed, and how many have not been actioned. It also displays the total number of jobs in the system that are incomplete, as wll as a 5 day Schedule display, to show what work has been scheduled">2015: Call Centre Dashboard (PHP, JS, HTML, CSS)</li>
@@ -341,8 +435,9 @@
 										<li onclick="snackbar($(this)[0].title,15000);" title="A customised report developed for Integrated Core Group that reads data from their Job Management System (simPRO) via an API. This report is designed to provide the Operations Manager with information on which projects have the highest expected profitibility. Building this report allowed us to find a bug within simPRO that was not calculating estimated costs correctly. This report has a form handler and is manually executed">2018: Job Profitability Report (PHP, JS, HTML, CSS)</li>
 										<li onclick="snackbar($(this)[0].title,15000);" title="A customised report developed for Integrated Core Group that test for online devices via ICMP for an IP-based Security Control center">2018: Control Room Dashboard (PHP, JS, HTML, CSS, AJAX)</li>
 										<li id="COREmonitor" onclick="snackbar($(this)[0].title,15000);" title="An alarm monitoring system designed as per client specifications in  order to monitor 120+ retail stores nation wide with new features added monthly as per client requirements">
-											2018: COREmonitor(PHP, JS, HTML, CSS, JQUERY, BOOSTRAP, AJAX)
+											2018: COREmonitor - an Armed Response Control Room software system(PHP, JS, HTML, CSS, JQUERY, BOOSTRAP, AJAX,SQL)
 										</li>
+										<li onclick="snackbar($(this)[0].title,15000);" title="Setup and managed a GitLab server for the organization">2018: GitLab Server setup and hosting</li>
 									</ol>
 								</li>
 							</ol>
@@ -353,7 +448,7 @@
 							<li>
 								<a target="_blank" href="https://github.com/matatacmca">Github</a><br>
 								Why continuously update dynamic content? ajax & github API is used to update the below repositories<br>
-								(hover or click each item for the project desription)
+								<span class="noPrint">(hover or click each item for the project description)</span>
 								<div id="githubRepos"></div>
 								<script>
 var result = "";
@@ -397,6 +492,31 @@ function handleRepos(data)
 	document.getElementById('githubRepos').innerHTML = result;
 }
 								</script>
+							</li>
+							<li>
+								Other Projects
+								<ol>
+									<li>
+										Web design consultation for <a target="_blank" href="http://blacklight.co.za">Blacklight</a><br>
+										Projects Include:
+										<ul>
+											<li>Design and Development of <a target="_blank" href="http://greentrust.org.za">greentrust.org.za</a></li>
+											<li>Design and Development of <a target="_blank" href="http://act.org.za">act.org.za</a></li>
+											<li>Design and development of <a target="_blank" href="http://chezlmdwsacc.com">chezlmdwsacc.com</a> (membership only)</li>
+											<li>Various feature hacks for <a href="http://brother.co.za" target="_blank">brother.co.za</a></li>
+											<li>Design and creation of <a target="_blank" href="http://gtsec.africa">gtsec.africa</a></li>
+											<li>Development of <a target="_blank" href="http://qd.co.za">qd.co.za</a></li>
+										</ul>
+									</li>
+									<li>
+										Software Development for Emergency and Medical Equipment<br>
+										Projects Include:
+										<ul>
+											<li>An Ink-Stain Security System for <a href="http://bankingtech.co.za">Secure Banking Technologies</a></li>
+											<li>A product tracking and maintenance platform for <a href="http://bankingtech.co.za">Secure Banking Technologies</a></li>
+										</ul>
+									</li>
+								</ol>
 							</li>
 						</ol>
 					</div>

@@ -288,8 +288,6 @@ li
 	width:5vh;
 	background: url("arrow-down.png") no-repeat center;
 	margin:0 auto;
-	border: thick solid white;
-	border-radius:50%;
 	display:none;
 }
 .returnToSea
@@ -323,7 +321,7 @@ li
     width:10vw;
     height:10vw;
     margin:0 auto;
-    background: url('avatar.jpg') no-repeat center;
+    background: url('avatar.jpeg') no-repeat center;
     background-size:cover;
     border-radius:50%;
 }

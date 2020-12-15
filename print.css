@@ -13,7 +13,7 @@
     width:20vw;
     height:20vw;
     margin:0 auto;
-    background: url('avatar.jpg') no-repeat center;
+    background: url('avatar.jpeg') no-repeat center;
     background-size:cover;
     border-radius:50%;
 }
@@ -43,13 +43,14 @@ li
     padding:0;
     margin: 0 auto;
     cursor:auto;
-    background:none;
+    background:#ffffff !important;
+    /*background-image:none !important;*/
     min-width:100%;
     max-width:100%;
     width:100%;
     height:auto;
-    background-color: white;
-    background-size:0;
+    /*background-color: white;*/
+    /*background-size:0;*/
 
 }
 body
@@ -57,13 +58,14 @@ body
     padding:0;
     margin: 0 auto;
     cursor:auto;
-    background:none;
+    /*background:none;*/
     min-width:100%;
     max-width:100%;
     width:100%;
     height:auto;
-    background-color: white;
-    background-size:0;
+    /*background-color: white;*/
+    /*background-size:0;*/
+    background:#ffffff !important;
 
 }
 .jquery-ripples
@@ -71,7 +73,8 @@ body
 	padding:0;
     margin: 0 auto;
     cursor:auto;
-    background-image:none;
+    background:none !important;
+    background-image:none !important;
     min-width:100%;
     max-width:100%;
     width:100%;
